@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Saba Yaqoob</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Ovo&display=swap');
+        body { font-family: 'Inter', sans-serif; color: #a3a3a3; }
+        .font-ovo { font-family: 'Ovo', serif; }
+        .hover-transition { transition: color 0.3s ease; }
+    </style>
+</head>
+
+<body class="bg-white text-gray-400">
+
+    <header class="flex flex-wrap justify-between items-center px-10 py-8">
+        <h1 class="text-2xl font-ovo text-gray-400 tracking-wide">Saba Yaqoob</h1>
+        <nav class="flex gap-6 mt-4 md:mt-0">
+            <a href="#art" class="text-xs font-semibold uppercase tracking-widest hover:text-red-600 hover-transition">Art</a>
+            <a href="#books" class="text-xs font-semibold uppercase tracking-widest hover:text-orange-600 hover-transition">Books</a>
+            <a href="#acting" class="text-xs font-semibold uppercase tracking-widest hover:text-green-400 hover-transition">Acting</a>
+            <a href="#about" class="text-xs font-semibold uppercase tracking-widest hover:text-gray-600 hover-transition">About</a>
+            <a href="#contact" class="text-xs font-semibold uppercase tracking-widest hover:text-purple-400 hover-transition">Contact</a>
+        </nav>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-24">
+
+        <!-- Art Section -->
+        <section id="art">
+            <h2 class="text-3xl font-light mb-8 group hover:text-red-600 hover-transition cursor-default">Art</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <img src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Art+Project+1" alt="Art Work" class="w-full h-64 object-cover rounded-lg shadow-sm">
+                    <h3 class="font-semibold text-gray-400">Abstract Realism</h3>
+                    <p class="text-sm text-gray-400">Exploration of form and negative space.</p>
+                </div>
+                <div class="space-y-4">
+                    <img src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Art+Project+2" alt="Art Work" class="w-full h-64 object-cover rounded-lg shadow-sm">
+                    <h3 class="font-semibold text-gray-400">Digital Sketches</h3>
+                    <p class="text-sm text-gray-400">Rapid prototyping of visual narratives.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Books Section -->
+        <section id="books">
+            <h2 class="text-3xl font-light mb-8 group hover:text-orange-600 hover-transition cursor-default">Books</h2>
+            <div class="space-y-6">
+                <div class="flex items-center gap-6 p-4 border rounded-lg border-gray-100 hover:border-orange-200 transition-colors">
+                    <div class="w-16 h-24 bg-gray-50 flex items-center justify-center text-xs text-gray-400">Cover</div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-gray-400">"The Quiet Morning"</h3>
+                        <p class="text-sm text-gray-400">A collection of short stories exploring urban solitude.</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-6 p-4 border rounded-lg border-gray-100 hover:border-orange-200 transition-colors">
+                    <div class="w-16 h-24 bg-gray-50 flex items-center justify-center text-xs text-gray-400">Cover</div>
+                    <div>
+                        <h3 class="font-semibold text-lg text-gray-400">"Shadows of Memory"</h3>
+                        <p class="text-sm text-gray-400">A non-fiction memoir regarding creative persistence.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Acting Section -->
+        <section id="acting">
+            <h2 class="text-3xl font-light mb-8 group hover:text-green-400 hover-transition cursor-default">Acting</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="p-6 bg-gray-50 rounded-lg">
+                    <h3 class="font-semibold text-gray-400">The Midnight Play</h3>
+                    <p class="text-sm text-gray-400 mt-2">Lead Role | 2025</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg">
+                    <h3 class="font-semibold text-gray-400">Urban Echoes</h3>
+                    <p class="text-sm text-gray-400 mt-2">Supporting | 2024</p>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg">
+                    <h3 class="font-semibold text-gray-400">Short Film Feature</h3>
+                    <p class="text-sm text-gray-400 mt-2">Principal | 2023</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="pb-12 border-b border-gray-100">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <img src="https://placehold.co/400x400/f3f4f6/a3a3a3?text=Profile" alt="Artist Profile" class="w-64 h-64 object-cover rounded-full shadow-sm">
+                <div>
+                    <h2 class="text-3xl font-light mb-6 text-gray-400">About</h2>
+                    <p class="text-lg leading-relaxed text-gray-400">
+                        Welcome to my digital space. I am a multidisciplinary creator working at the intersection of visual arts, literature, and performance. This portfolio captures my journey, projects, and ongoing experiments.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="pb-12">
+            <h2 class="text-3xl font-light mb-8 group hover:text-purple-400 hover-transition cursor-default">Contact</h2>
+            <p class="text-lg text-gray-400 mb-6">
+                Let's collaborate on something meaningful. Send me an email at 
+                <a href="mailto:hello@example.com" class="font-semibold text-gray-400 hover:text-purple-400 transition-colors">hello@example.com</a>.
+            </p>
+        </section>
+
+    </main>
+
+    <footer class="py-12 text-center text-gray-400 text-sm">
+        &copy; 2026 Saba Yaqoob. All rights reserved.
+    </footer>
+
+</body>
+</html>
