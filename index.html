@@ -41,28 +41,28 @@
     <!-- Navigation -->
     <header id="mainHeader" class="flex flex-col px-10 py-4 border-b border-gray-50 sticky top-0 bg-white/90 backdrop-blur-md z-50 transition-all">
         <div class="flex justify-between items-center">
-            <h1 class="text-3xl font-ovo text-gray-600 tracking-wide cursor-pointer inline-flex items-center gap-2 group" onclick="showPage('home')">
+            <h1 class="text-3xl font-ovo text-gray-600 tracking-wide cursor-pointer inline-flex items-center gap-2 group" onclick="showPage('home', '#hero')">
                 <span>Saba Yaqoob</span>
                 <span class="inline-block transition-transform duration-500 group-hover:rotate-45 group-hover:scale-110">🌈</span>
             </h1>
             <button onclick="toggleMenu()" class="md:hidden text-2xl focus:outline-none hover:text-gray-900 transition-colors z-50 relative">☰</button>
 
             <nav id="desktopMenu" class="hidden md:flex gap-6">
-                <a href="#art" onclick="showPage('home')" class="text-sm font-ovo tracking-wider hover:text-red-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-red-500 hover:after:w-full after:transition-all">Art</a>
-                <a href="#acting" onclick="showPage('home')" class="text-sm font-ovo tracking-wider hover:text-green-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-green-500 hover:after:w-full after:transition-all">Acting</a>
-                <a href="#about" onclick="showPage('home')" class="text-sm font-ovo tracking-wider hover:text-purple-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-purple-500 hover:after:w-full after:transition-all">About</a>
-                <a href="#contact" onclick="showPage('home')" class="text-sm font-ovo tracking-wider hover:text-blue-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-500 hover:after:w-full after:transition-all">Contact</a>
+                <a href="#art" onclick="showPage('home', '#art')" class="text-sm font-ovo tracking-wider hover:text-red-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-red-500 hover:after:w-full after:transition-all">Art</a>
+                <a href="#acting" onclick="showPage('home', '#acting')" class="text-sm font-ovo tracking-wider hover:text-green-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-green-500 hover:after:w-full after:transition-all">Acting</a>
+                <a href="#about" onclick="showPage('home', '#about')" class="text-sm font-ovo tracking-wider hover:text-purple-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-purple-500 hover:after:w-full after:transition-all">About</a>
+                <a href="#contact" onclick="showPage('home', '#contact')" class="text-sm font-ovo tracking-wider hover:text-blue-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-500 hover:after:w-full after:transition-all">Contact</a>
             </nav>
         </div>
-
-        <!-- Fullscreen Mobile Overlay Menu with Section-Specific Hover Colors -->
-        <nav id="mobileMenu" class="hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8 text-center animate-fade-in">
-            <a href="#art" onclick="toggleMenu(); showPage('home')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-red-500 hover-transition">Art</a>
-            <a href="#acting" onclick="toggleMenu(); showPage('home')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-green-500 hover-transition">Acting</a>
-            <a href="#about" onclick="toggleMenu(); showPage('home')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-purple-500 hover-transition">About</a>
-            <a href="#contact" onclick="toggleMenu(); showPage('home')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-blue-500 hover-transition">Contact</a>
-        </nav>
     </header>
+
+    <!-- Fullscreen Mobile Overlay Menu -->
+    <nav id="mobileMenu" class="hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8 text-center animate-fade-in">
+        <a href="#art" onclick="toggleMenu(); showPage('home', '#art')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-red-500 hover-transition">Art</a>
+        <a href="#acting" onclick="toggleMenu(); showPage('home', '#acting')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-green-500 hover-transition">Acting</a>
+        <a href="#about" onclick="toggleMenu(); showPage('home', '#about')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-purple-500 hover-transition">About</a>
+        <a href="#contact" onclick="toggleMenu(); showPage('home', '#contact')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-blue-500 hover-transition">Contact</a>
+    </nav>
 
     <div class="flex-grow">
         <div id="page-home" class="animate-fade-in">
@@ -180,7 +180,7 @@
 
         <!-- Traditional Art Page -->
         <div id="page-traditional" class="hidden max-w-4xl mx-auto px-6 py-20 animate-fade-in">
-            <button onclick="showPage('home')" class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors">← Back to Portfolio</button>
+            <button onclick="showPage('home', '#art')" class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors">← Back to Art</button>
             <h2 class="text-4xl font-ovo font-bold mb-6 text-red-500">Traditional Art</h2>
             <p class="text-gray-500 mb-8">A collection of physical works, oils, and mixed media pieces.</p>
             <img src="https://placehold.co/900x500/f3f4f6/a3a3a3?text=Traditional+Works+Gallery" class="w-full mb-6 shadow-sm animate-image-reveal" alt="Traditional Works">
@@ -188,7 +188,7 @@
 
         <!-- Sketches Page -->
         <div id="page-sketches" class="hidden max-w-4xl mx-auto px-6 py-20 animate-fade-in">
-            <button onclick="showPage('home')" class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors">← Back to Portfolio</button>
+            <button onclick="showPage('home', '#art')" class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors">← Back to Art</button>
             <h2 class="text-4xl font-ovo font-bold mb-6 text-red-500">Sketches & Studies</h2>
             <p class="text-gray-500 mb-8">Charcoal, graphite, and exploratory ink studies capturing raw expressions.</p>
             <img src="https://placehold.co/900x500/f3f4f6/a3a3a3?text=Sketches+Gallery" class="w-full mb-6 shadow-sm animate-image-reveal" alt="Sketches">
@@ -196,7 +196,7 @@
 
         <!-- Digital Art Page -->
         <div id="page-digital" class="hidden max-w-4xl mx-auto px-6 py-20 animate-fade-in">
-            <button onclick="showPage('home')" class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors">← Back to Portfolio</button>
+            <button onclick="showPage('home', '#art')" class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors">← Back to Art</button>
             <h2 class="text-4xl font-ovo font-bold mb-6 text-red-500">Digital Art</h2>
             <p class="text-gray-500 mb-8">Digital illustrations, scans, and graphic works.</p>
             <img src="https://placehold.co/900x500/f3f4f6/a3a3a3?text=Digital+Art+Gallery" class="w-full mb-6 shadow-sm animate-image-reveal" alt="Digital Art">
@@ -213,16 +213,41 @@
     </footer>
 
     <script>
-        function showPage(pageId) {
+        function showPage(pageId, targetHash) {
+            // Hide all page containers
             document.querySelectorAll('div[id^="page-"]').forEach(div => div.classList.add('hidden'));
+            
+            // Show target page
             const targetPage = document.getElementById('page-' + pageId);
-            targetPage.classList.remove('hidden');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (targetPage) {
+                targetPage.classList.remove('hidden');
+            }
+
+            // Close mobile menu if open
+            const menu = document.getElementById('mobileMenu');
+            if (menu && !menu.classList.contains('hidden')) {
+                menu.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+
+            // Scroll to target hash or top of page
+            if (targetHash) {
+                setTimeout(() => {
+                    const el = document.querySelector(targetHash);
+                    if (el) {
+                        el.scrollIntoView({ behavior: 'smooth' });
+                    } else {
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                }, 50);
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
         }
+
         function toggleMenu() {
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('hidden');
-            // Prevent body scrolling when menu is open
             if (!menu.classList.contains('hidden')) {
                 document.body.style.overflow = 'hidden';
             } else {
