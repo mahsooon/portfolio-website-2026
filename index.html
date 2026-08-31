@@ -28,7 +28,6 @@
 
             <nav id="desktopMenu" class="hidden md:flex gap-6">
                 <a href="#art" onclick="showPage('home')" class="text-xs font-semibold uppercase tracking-widest hover:text-red-500 hover-transition">Art</a>
-                <a href="#books" onclick="showPage('home')" class="text-xs font-semibold uppercase tracking-widest hover:text-orange-500 hover-transition">Books</a>
                 <a href="#acting" onclick="showPage('home')" class="text-xs font-semibold uppercase tracking-widest hover:text-green-500 hover-transition">Acting</a>
                 <a href="#about" onclick="showPage('home')" class="text-xs font-semibold uppercase tracking-widest hover:text-purple-500 hover-transition">About</a>
                 <a href="#contact" onclick="showPage('home')" class="text-xs font-semibold uppercase tracking-widest hover:text-blue-500 hover-transition">Contact</a>
@@ -37,7 +36,6 @@
 
         <nav id="mobileMenu" class="hidden md:hidden flex flex-col gap-4 mt-6 text-center">
             <a href="#art" onclick="toggleMenu(); showPage('home')" class="text-sm font-semibold uppercase tracking-widest py-2 hover:text-red-500 hover-transition">Art</a>
-            <a href="#books" onclick="toggleMenu(); showPage('home')" class="text-sm font-semibold uppercase tracking-widest py-2 hover:text-orange-500 hover-transition">Books</a>
             <a href="#acting" onclick="toggleMenu(); showPage('home')" class="text-sm font-semibold uppercase tracking-widest py-2 hover:text-green-500 hover-transition">Acting</a>
             <a href="#about" onclick="toggleMenu(); showPage('home')" class="text-sm font-semibold uppercase tracking-widest py-2 hover:text-purple-500 hover-transition">About</a>
             <a href="#contact" onclick="toggleMenu(); showPage('home')" class="text-sm font-semibold uppercase tracking-widest py-2 hover:text-blue-500 hover-transition">Contact</a>
@@ -68,25 +66,8 @@
                 </section>
             </main>
 
-            <!-- PART 2: Full-Width Breakout Section -->
-         <section id="books-hero" class="w-full my-12">
-    <img src="hero2.jpg" alt="Book Inspiration" class="w-full aspect-video object-cover">
-</section>
-
-            <!-- PART 3: Constrained Content continues -->
+            <!-- PART 2: Constrained Content continues -->
             <main class="max-w-4xl mx-auto px-6 py-12 space-y-24">
-                <section id="books">
-                    <h2 class="text-3xl font-light mb-8 text-gray-600">Books</h2>
-                    <div class="flex flex-col sm:flex-row items-center gap-8 p-6">
-                        <img src="salted-wounds-cover.jpg" alt="Salted Wounds Book Cover" class="w-48 h-auto shadow-lg">
-                        <div class="flex-grow text-center sm:text-left">
-                            <h3 class="font-semibold text-xl text-gray-600">"salted wounds"</h3>
-                            <p class="text-base">A collection of poetry exploring identity, trauma and love.</p>
-                            <a href="https://amzn.eu/d/09etEEiw" class="mt-4 inline-block px-6 py-2 bg-orange-50 text-orange-600 font-semibold text-sm hover:bg-orange-100 transition-all">Purchase Poetry Book →</a>
-                        </div>
-                    </div>
-                </section>
-
                 <section id="acting">
                     <h2 class="text-3xl font-light mb-8 text-gray-600">Acting</h2>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -97,22 +78,20 @@
                     <a href="https://www.imdb.com/name/nm16391435/?ref_=ext_shr_lnk" class="inline-block px-6 py-3 bg-green-50 text-green-600 font-semibold text-sm hover:bg-green-100 transition-all">View IMDb Profile →</a>
                 </section>
 
-  <section id="about" class="pb-12 border-b border-gray-100 grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
-    <div class="flex flex-col justify-center">
-        <h2 class="text-3xl font-light mb-8 text-gray-600">About</h2>
-        <!-- text-base is two steps smaller than text-lg -->
-        <p class="text-base leading-relaxed text-justify hyphens-auto">
-            Saba is a multidisciplinary artist originally from Pakistan who has been based in Paris for over a decade. During her formative years in Hong Kong, she completely immersed herself in the arts—playing musical instruments, singing in choirs, and acting in theatrical productions. A lifelong creative, Saba has been painting and drawing since childhood. Her early fascination with performance was sparked by annual school plays, where she took on diverse roles ranging from a Troll to Felicity Morgan in Robert Swindells' Room 13, cementing her lifelong passion for acting.
-            <br><br> <!-- Added a break for better readability between paragraphs -->
-            Holding a Bachelor’s degree in Graphic Design (majoring in UX/UI) from LISAA Paris and a diverse professional background, she continually pushes her artistic boundaries through filmmaking and poetry. Alongside her growing interest in photography, Saba remains dedicated to painting and sketching, specialising in emotive portraits that capture frequently stigmatised or "shunned" emotions.
-        </p>
-    </div>
-    
-    <div class="relative w-full h-full min-h-[300px]">
-        <!-- Changed object-cover to object-contain to prevent zooming -->
-        <img src="about.jpg" alt="About Image" class="w-full h-full object-contain shadow-sm">
-    </div>
-</section>
+                <section id="about" class="pb-12 border-b border-gray-100 grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
+                    <div class="flex flex-col justify-center">
+                        <h2 class="text-3xl font-light mb-8 text-gray-600">About</h2>
+                        <p class="text-base leading-relaxed text-justify hyphens-auto">
+                            Saba is a multidisciplinary artist originally from Pakistan who has been based in Paris for over a decade. During her formative years in Hong Kong, she completely immersed herself in the arts—playing musical instruments, singing in choirs, and acting in theatrical productions. A lifelong creative, Saba has been painting and drawing since childhood. Her early fascination with performance was sparked by annual school plays, where she took on diverse roles ranging from a Troll to Felicity Morgan in Robert Swindells' Room 13, cementing her lifelong passion for acting.
+                            <br><br>
+                            Holding a Bachelor’s degree in Graphic Design (majoring in UX/UI) from LISAA Paris and a diverse professional background, she continually pushes her artistic boundaries through filmmaking and poetry. Alongside her growing interest in photography, Saba remains dedicated to painting and sketching, specialising in emotive portraits that capture frequently stigmatised or "shunned" emotions.
+                        </p>
+                    </div>
+                    
+                    <div class="relative w-full h-full min-h-[300px]">
+                        <img src="about.jpg" alt="About Image" class="w-full h-full object-contain shadow-sm">
+                    </div>
+                </section>
 
                 <section id="contact" class="pt-12">
                     <h2 class="text-3xl font-light mb-8 text-gray-600">Contact</h2>
