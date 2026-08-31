@@ -56,18 +56,18 @@
         </div>
     </header>
 
-    <!-- Fullscreen Mobile Overlay Menu -->
+    <!-- Fullscreen Mobile Overlay Menu with Underline Hover Animation -->
     <nav id="mobileMenu" class="hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8 text-center animate-fade-in">
-        <a href="#art" onclick="toggleMenu(); showPage('home', '#art')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-red-500 hover-transition">Art</a>
-        <a href="#acting" onclick="toggleMenu(); showPage('home', '#acting')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-green-500 hover-transition">Acting</a>
-        <a href="#about" onclick="toggleMenu(); showPage('home', '#about')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-purple-500 hover-transition">About</a>
-        <a href="#contact" onclick="toggleMenu(); showPage('home', '#contact')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-blue-500 hover-transition">Contact</a>
+        <a href="#art" onclick="toggleMenu(); showPage('home', '#art')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-red-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-red-500 hover:after:w-full after:transition-all">Art</a>
+        <a href="#acting" onclick="toggleMenu(); showPage('home', '#acting')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-green-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-green-500 hover:after:w-full after:transition-all">Acting</a>
+        <a href="#about" onclick="toggleMenu(); showPage('home', '#about')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-purple-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-purple-500 hover:after:w-full after:transition-all">About</a>
+        <a href="#contact" onclick="toggleMenu(); showPage('home', '#contact')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-blue-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-500 hover:after:w-full after:transition-all">Contact</a>
     </nav>
 
     <div class="flex-grow">
         <div id="page-home" class="animate-fade-in">
-            <!-- Fully Responsive Screen-Scaling Hero Image with proper object-cover crop -->
-            <section id="hero" class="w-full h-[60vh] sm:h-[75vh] md:h-[85vh] lg:h-[90vh] overflow-hidden">
+            <!-- Fully Responsive Screen-Scaling Hero Image with full height on mobile -->
+            <section id="hero" class="w-full h-[calc(100vh-73px)] sm:h-[75vh] md:h-[85vh] lg:h-[90vh] overflow-hidden">
                 <img src="hero3.jpg" alt="Saba Yaqoob" class="w-full h-full object-cover object-center shadow-sm animate-image-reveal transform hover:scale-[1.01] transition-transform duration-700" onerror="this.src='https://placehold.co/1600x900/f3f4f6/a3a3a3?text=Saba+Yaqoob'">
             </section>
 
