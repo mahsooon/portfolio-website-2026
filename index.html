@@ -45,7 +45,7 @@
                 <span>Saba Yaqoob</span>
                 <span class="inline-block transition-transform duration-500 group-hover:rotate-45 group-hover:scale-110">🌈</span>
             </h1>
-            <button onclick="toggleMenu()" class="md:hidden text-2xl focus:outline-none hover:text-gray-900 transition-colors">☰</button>
+            <button onclick="toggleMenu()" class="md:hidden text-2xl focus:outline-none hover:text-gray-900 transition-colors z-50 relative">☰</button>
 
             <nav id="desktopMenu" class="hidden md:flex gap-6">
                 <a href="#art" onclick="showPage('home')" class="text-sm font-ovo tracking-wider hover:text-red-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-red-500 hover:after:w-full after:transition-all">Art</a>
@@ -55,18 +55,20 @@
             </nav>
         </div>
 
-        <nav id="mobileMenu" class="hidden md:hidden flex flex-col gap-4 mt-6 text-center animate-fade-in">
-            <a href="#art" onclick="toggleMenu(); showPage('home')" class="text-base font-ovo tracking-wider py-2 hover:text-red-500 hover-transition">Art</a>
-            <a href="#acting" onclick="toggleMenu(); showPage('home')" class="text-base font-ovo tracking-wider py-2 hover:text-green-500 hover-transition">Acting</a>
-            <a href="#about" onclick="toggleMenu(); showPage('home')" class="text-base font-ovo tracking-wider py-2 hover:text-purple-500 hover-transition">About</a>
-            <a href="#contact" onclick="toggleMenu(); showPage('home')" class="text-base font-ovo tracking-wider py-2 hover:text-blue-500 hover-transition">Contact</a>
+        <!-- Fullscreen Mobile Overlay Menu -->
+        <nav id="mobileMenu" class="hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8 text-center animate-fade-in">
+            <a href="#art" onclick="toggleMenu(); showPage('home')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-red-500 hover-transition">Art</a>
+            <a href="#acting" onclick="toggleMenu(); showPage('home')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-green-500 hover-transition">Acting</a>
+            <a href="#about" onclick="toggleMenu(); showPage('home')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-purple-500 hover-transition">About</a>
+            <a href="#contact" onclick="toggleMenu(); showPage('home')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-blue-500 hover-transition">Contact</a>
         </nav>
     </header>
 
     <div class="flex-grow">
         <div id="page-home" class="animate-fade-in">
-            <section id="hero" class="w-full overflow-hidden">
-                <img src="hero3.jpg" alt="Saba Yaqoob" class="w-full h-full object-cover shadow-sm animate-image-reveal transform hover:scale-[1.01] transition-transform duration-700" onerror="this.src='https://placehold.co/1200x600/f3f4f6/a3a3a3?text=Saba+Yaqoob'">
+            <!-- Fully Responsive Screen-Scaling Hero Image -->
+            <section id="hero" class="w-full h-[50vh] sm:h-[65vh] md:h-[75vh] lg:h-[85vh] overflow-hidden">
+                <img src="hero3.jpg" alt="Saba Yaqoob" class="w-full h-full object-cover object-center shadow-sm animate-image-reveal transform hover:scale-[1.01] transition-transform duration-700" onerror="this.src='https://placehold.co/1600x900/f3f4f6/a3a3a3?text=Saba+Yaqoob'">
             </section>
 
             <!-- ART SECTION -->
@@ -218,7 +220,14 @@
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
         function toggleMenu() {
-            document.getElementById('mobileMenu').classList.toggle('hidden');
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+            // Prevent body scrolling when menu is open
+            if (!menu.classList.contains('hidden')) {
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.style.overflow = 'auto';
+            }
         }
     </script>
 </body>
