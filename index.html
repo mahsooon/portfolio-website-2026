@@ -30,37 +30,37 @@
         }
 
         .hover-transition {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        @keyframes fadeIn {
-            from {
+        @keyframes pageSlideIn {
+            0% {
                 opacity: 0;
-                transform: translateY(10px);
+                transform: translateY(15px);
             }
-            to {
+            100% {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
 
         .animate-fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
+            animation: pageSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         @keyframes slowFadeIn {
-            from {
+            0% {
                 opacity: 0;
                 transform: scale(0.98);
             }
-            to {
+            100% {
                 opacity: 1;
                 transform: scale(1);
             }
         }
 
         .animate-slow-fade {
-            animation: slowFadeIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            animation: slowFadeIn 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
 
         #mainHeader {
@@ -231,10 +231,10 @@
 
             <!-- Desktop Navigation -->
             <nav id="desktopMenu" class="hidden md:flex gap-6" aria-label="Main navigation">
-                <a href="#art" onclick="showPage('home', '#art')" class="text-sm font-ovo tracking-wider hover:text-red-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-red-500 hover:after:w-full after:transition-all">Art</a>
-                <a href="#acting" onclick="showPage('home', '#acting')" class="text-sm font-ovo tracking-wider hover:text-green-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-green-500 hover:after:w-full after:transition-all">Acting</a>
-                <a href="#about" onclick="showPage('home', '#about')" class="text-sm font-ovo tracking-wider hover:text-purple-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-purple-500 hover:after:w-full after:transition-all">About</a>
-                <a href="#contact" onclick="showPage('home', '#contact')" class="text-sm font-ovo tracking-wider hover:text-blue-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-500 hover:after:w-full after:transition-all">Contact</a>
+                <a href="#art" onclick="showPage('home', '#art')" class="text-sm font-ovo tracking-wider hover:text-red-500 hover-transition relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-red-500 hover:after:w-full after:transition-all after:duration-300">Art</a>
+                <a href="#acting" onclick="showPage('home', '#acting')" class="text-sm font-ovo tracking-wider hover:text-green-500 hover-transition relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-green-500 hover:after:w-full after:transition-all after:duration-300">Acting</a>
+                <a href="#about" onclick="showPage('home', '#about')" class="text-sm font-ovo tracking-wider hover:text-purple-500 hover-transition relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-purple-500 hover:after:w-full after:transition-all after:duration-300">About</a>
+                <a href="#contact" onclick="showPage('home', '#contact')" class="text-sm font-ovo tracking-wider hover:text-blue-500 hover-transition relative py-1 after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-blue-500 hover:after:w-full after:transition-all after:duration-300">Contact</a>
             </nav>
         </div>
     </header>
@@ -255,7 +255,7 @@
             <!-- HERO -->
             <section id="hero" class="w-full h-[calc(100svh-73px)] md:h-[calc(100vh-73px)] min-h-[400px] flex items-center justify-center bg-gray-50 overflow-hidden">
                 <div class="w-full h-full flex items-center justify-center overflow-hidden">
-                    <img src="hero3.jpg" alt="Saba Yaqoob" class="w-full h-full object-cover object-center shadow-sm animate-slow-fade transform hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/1600x900/f3f4f6/a3a3a3?text=Saba+Yaqoob'">
+                    <img src="hero3.jpg" alt="Saba Yaqoob" class="w-full h-full object-cover object-center shadow-sm animate-slow-fade transform hover:scale-[1.03] transition-transform duration-700 ease-out" onerror="this.src='https://placehold.co/1600x900/f3f4f6/a3a3a3?text=Saba+Yaqoob'">
                 </div>
             </section>
 
@@ -269,21 +269,21 @@
                         <!-- Traditional -->
                         <button type="button" onclick="showPage('traditional')" class="text-left space-y-4 cursor-pointer group focus:outline-none">
                             <div class="overflow-hidden rounded-sm shadow-sm bg-gray-50">
-                                <img src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Traditional" alt="Traditional art" class="w-full h-64 object-cover animate-slow-fade transform group-hover:scale-105 transition-transform duration-500">
+                                <img src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Traditional" alt="Traditional art" class="w-full h-64 object-cover animate-slow-fade transform group-hover:scale-105 transition-transform duration-700 ease-out">
                             </div>
                             <h3 class="font-semibold text-gray-600 group-hover:text-red-500 transition-colors">Traditional</h3>
                         </button>
                         <!-- Sketches -->
                         <button type="button" onclick="showPage('sketches')" class="text-left space-y-4 cursor-pointer group focus:outline-none">
                             <div class="overflow-hidden rounded-sm shadow-sm bg-gray-50">
-                                <img src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Sketches" alt="Sketches" class="w-full h-64 object-cover animate-slow-fade transform group-hover:scale-105 transition-transform duration-500">
+                                <img src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Sketches" alt="Sketches" class="w-full h-64 object-cover animate-slow-fade transform group-hover:scale-105 transition-transform duration-700 ease-out">
                             </div>
                             <h3 class="font-semibold text-gray-600 group-hover:text-red-500 transition-colors">Sketches</h3>
                         </button>
                         <!-- Digital -->
                         <button type="button" onclick="showPage('digital')" class="text-left space-y-4 cursor-pointer group focus:outline-none">
                             <div class="overflow-hidden rounded-sm shadow-sm bg-gray-50">
-                                <img src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Digital" alt="Digital art" class="w-full h-64 object-cover animate-slow-fade transform group-hover:scale-105 transition-transform duration-500">
+                                <img src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Digital" alt="Digital art" class="w-full h-64 object-cover animate-slow-fade transform group-hover:scale-105 transition-transform duration-700 ease-out">
                             </div>
                             <h3 class="font-semibold text-gray-600 group-hover:text-red-500 transition-colors">Digital</h3>
                         </button>
@@ -337,7 +337,7 @@
                         </div>
                         <div class="flex flex-col">
                             <div class="relative w-full h-full min-h-[300px] overflow-hidden group">
-                                <img src="about.jpg" alt="Saba Yaqoob" class="w-full h-full object-contain animate-slow-fade transform group-hover:scale-105 transition-transform duration-700 shadow-sm" onerror="this.src='https://placehold.co/400x500/f3f4f6/a3a3a3?text=Saba+Yaqoob'">
+                                <img src="about.jpg" alt="Saba Yaqoob" class="w-full h-full object-contain animate-slow-fade transform group-hover:scale-105 transition-transform duration-700 ease-out shadow-sm" onerror="this.src='https://placehold.co/400x500/f3f4f6/a3a3a3?text=Saba+Yaqoob'">
                             </div>
                             <span class="text-xs text-gray-400 mt-2 text-right">Photo: Sharyal Zafar</span>
                         </div>
@@ -572,10 +572,13 @@
                 }
             });
 
-            // Show selected page
+            // Show selected page with smooth fade-in animation re-trigger
             const selected = document.getElementById('page-' + pageName);
             if (selected) {
                 selected.classList.remove('hidden');
+                selected.style.animation = 'none';
+                selected.offsetHeight; // trigger reflow
+                selected.style.animation = '';
                 selected.classList.add('animate-fade-in');
             }
 
