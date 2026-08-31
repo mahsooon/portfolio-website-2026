@@ -1,26 +1,40 @@
 <!DOCTYPE html>
 
 <html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 ```
-<link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f98b.png">
+<link
+    rel="icon"
+    href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f98b.png"
+>
 
 <title>Saba Yaqoob</title>
 
-<!-- Tailwind -->
+<!-- Tailwind CSS -->
 <script src="https://cdn.tailwindcss.com"></script>
 
-<!-- Fonts + Custom Styles -->
+<!-- Fonts + Custom CSS -->
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Ovo&display=swap');
 
+    /* --------------------------------------------------
+       BASE
+    -------------------------------------------------- */
+
+    html {
+        scroll-behavior: smooth;
+    }
+
     body {
+        margin: 0;
         font-family: 'Inter', sans-serif;
         color: #666666;
+        background: #ffffff;
     }
 
     .font-ovo {
@@ -31,7 +45,10 @@
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
-    /* Fade animation */
+    /* --------------------------------------------------
+       ANIMATIONS
+    -------------------------------------------------- */
+
     @keyframes fadeIn {
         from {
             opacity: 0;
@@ -48,7 +65,6 @@
         animation: fadeIn 0.6s ease-out forwards;
     }
 
-    /* Image fade */
     @keyframes slowFadeIn {
         from {
             opacity: 0;
@@ -65,20 +81,71 @@
         animation: slowFadeIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
-    /* Mailchimp */
-    #mc_embed_signup {
-        background: transparent !important;
+    /* --------------------------------------------------
+       HEADER
+    -------------------------------------------------- */
+
+    #mainHeader {
+        transition:
+            box-shadow 0.3s ease,
+            background-color 0.3s ease;
+    }
+
+    /* --------------------------------------------------
+       MOBILE MENU
+    -------------------------------------------------- */
+
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    /* --------------------------------------------------
+       MAILCHIMP
+    -------------------------------------------------- */
+
+    #mc_embed_shell {
         width: 100% !important;
         max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #mc_embed_signup {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: transparent !important;
+        clear: both !important;
+
         font-family: 'Inter', sans-serif !important;
         color: #4b5563 !important;
     }
 
+    #mc_embed_signup form {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    #mc_embed_signup_scroll {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
     #mc_embed_signup h2 {
+        margin: 0 0 0.75rem 0 !important;
+        padding: 0 !important;
+
         font-family: 'Ovo', serif !important;
         font-size: 1.875rem !important;
+        font-weight: 400 !important;
+        line-height: 1.3 !important;
+
         color: #4b5563 !important;
-        margin-bottom: 0.5rem !important;
     }
 
     #mc_embed_signup .indicates-required {
@@ -87,66 +154,125 @@
 
     #mc_embed_signup .mc-field-group {
         width: 100% !important;
-        padding-bottom: 1rem !important;
+        max-width: 100% !important;
+
+        min-height: 0 !important;
+
+        margin: 0 0 1rem 0 !important;
+        padding: 0 !important;
+
+        clear: both !important;
     }
 
     #mc_embed_signup .mc-field-group label {
+        display: block !important;
+
+        width: 100% !important;
+        margin: 0 0 0.35rem 0 !important;
+        padding: 0 !important;
+
         color: #4b5563 !important;
-        font-weight: 500 !important;
+
+        font-family: 'Inter', sans-serif !important;
         font-size: 0.875rem !important;
+        font-weight: 500 !important;
+        line-height: 1.5 !important;
     }
 
     #mc_embed_signup .mc-field-group input {
+        display: block !important;
         box-sizing: border-box !important;
+
+        width: 100% !important;
+        max-width: 100% !important;
+
+        height: auto !important;
+
+        margin: 0 !important;
+        padding: 0.7rem 0.75rem !important;
+
         border: 1px solid #e5e7eb !important;
         border-radius: 0.25rem !important;
-        padding: 0.65rem 0.75rem !important;
-        width: 100% !important;
-        margin-top: 0.25rem !important;
+
+        background: #ffffff !important;
         color: #4b5563 !important;
-        background: white !important;
+
         font-family: 'Inter', sans-serif !important;
+        font-size: 0.875rem !important;
+        line-height: 1.5 !important;
+
+        box-shadow: none !important;
     }
 
     #mc_embed_signup .mc-field-group input:focus {
         outline: none !important;
+
         border-color: #93c5fd !important;
-        box-shadow: 0 0 0 2px rgba(147, 197, 253, 0.2) !important;
+
+        box-shadow:
+            0 0 0 2px rgba(147, 197, 253, 0.2) !important;
     }
 
     #mc_embed_signup .button {
-        background-color: #3b82f6 !important;
-        color: white !important;
-        border-radius: 0.25rem !important;
+        display: inline-block !important;
+
+        width: auto !important;
+        min-width: 0 !important;
+        height: auto !important;
+        min-height: 0 !important;
+
+        margin: 0 !important;
         padding: 0.65rem 1.5rem !important;
-        font-family: 'Inter', sans-serif !important;
-        font-weight: 600 !important;
-        cursor: pointer !important;
+
         border: none !important;
-        transition: background-color 0.2s, transform 0.2s !important;
+        border-radius: 0.25rem !important;
+
+        background: #3b82f6 !important;
+        color: #ffffff !important;
+
+        font-family: 'Inter', sans-serif !important;
+        font-size: 0.875rem !important;
+        font-weight: 600 !important;
+        line-height: 1.5 !important;
+
+        cursor: pointer !important;
+
+        transition:
+            background-color 0.2s ease,
+            transform 0.2s ease !important;
     }
 
     #mc_embed_signup .button:hover {
-        background-color: #2563eb !important;
+        background: #2563eb !important;
         transform: translateY(-1px);
+    }
+
+    #mc_embed_signup .optionalParent,
+    #mc_embed_signup .foot {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
     #mc_embed_signup .response {
         margin: 1rem 0 !important;
+        padding: 0 !important;
     }
 
-    #mc_embed_signup .optionalParent {
-        margin-top: 0.5rem !important;
-    }
-
-    /* Keep Mailchimp branding subtle */
     #mc_embed_signup .refferal_badge {
+        display: inline-block !important;
+        margin-top: 1rem !important;
         opacity: 0.65;
     }
 
-    /* Mobile menu */
-    body.menu-open {
-        overflow: hidden;
+    /* --------------------------------------------------
+       MOBILE
+    -------------------------------------------------- */
+
+    @media (max-width: 767px) {
+        #mc_embed_signup h2 {
+            font-size: 1.65rem !important;
+        }
     }
 </style>
 ```
@@ -156,37 +282,54 @@
 <body class="bg-white text-gray-600 flex flex-col min-h-screen">
 
 ```
-<!-- HEADER -->
+<!-- ==================================================
+     HEADER
+================================================== -->
+
 <header
     id="mainHeader"
-    class="flex flex-col px-6 md:px-10 py-4 border-b border-gray-50 sticky top-0 bg-white/90 backdrop-blur-md z-50 transition-all"
+    class="flex flex-col px-6 md:px-10 py-4 border-b border-gray-50 sticky top-0 bg-white/90 backdrop-blur-md z-50"
 >
+
     <div class="flex justify-between items-center">
 
-        <h1
-            class="text-3xl font-ovo text-gray-600 tracking-wide cursor-pointer inline-flex items-center gap-2 group"
+        <!-- Logo / Name -->
+        <button
+            type="button"
             onclick="showPage('home', '#hero')"
+            class="text-3xl font-ovo text-gray-600 tracking-wide inline-flex items-center gap-2 group focus:outline-none"
+            aria-label="Go to homepage"
         >
             <span>Saba Yaqoob</span>
 
-            <span class="inline-block transition-transform duration-500 group-hover:rotate-45 group-hover:scale-110">
+            <span
+                class="inline-block transition-transform duration-500 group-hover:rotate-45 group-hover:scale-110"
+            >
                 🌈
             </span>
-        </h1>
+        </button>
 
-        <!-- Mobile menu button -->
+
+        <!-- Mobile Menu Button -->
         <button
             id="menuButton"
+            type="button"
             onclick="toggleMenu()"
             class="md:hidden text-2xl focus:outline-none hover:text-gray-900 transition-colors z-50 relative"
             aria-label="Open menu"
             aria-expanded="false"
+            aria-controls="mobileMenu"
         >
             ☰
         </button>
 
-        <!-- Desktop navigation -->
-        <nav id="desktopMenu" class="hidden md:flex gap-6">
+
+        <!-- Desktop Navigation -->
+        <nav
+            id="desktopMenu"
+            class="hidden md:flex gap-6"
+            aria-label="Main navigation"
+        >
 
             <a
                 href="#art"
@@ -221,14 +364,20 @@
             </a>
 
         </nav>
+
     </div>
+
 </header>
 
 
-<!-- MOBILE NAVIGATION -->
+<!-- ==================================================
+     MOBILE NAVIGATION
+================================================== -->
+
 <nav
     id="mobileMenu"
-    class="hidden fixed inset-0 bg-white z-40 flex-col items-center justify-center gap-8 text-center animate-fade-in"
+    class="hidden fixed inset-0 bg-white z-40 flex-col items-center justify-center gap-8 text-center"
+    aria-label="Mobile navigation"
 >
 
     <a
@@ -266,17 +415,28 @@
 </nav>
 
 
-<!-- MAIN -->
+<!-- ==================================================
+     MAIN
+================================================== -->
+
 <main class="flex-grow">
 
-    <!-- HOME PAGE -->
+    <!-- ==================================================
+         HOME PAGE
+    ================================================== -->
+
     <div id="page-home" class="animate-fade-in">
 
-        <!-- HERO -->
+
+        <!-- ------------------------------------------------
+             HERO
+        ------------------------------------------------- -->
+
         <section
             id="hero"
             class="w-full h-[calc(100svh-73px)] md:h-[calc(100vh-73px)] min-h-[400px] flex items-center justify-center bg-gray-50 overflow-hidden"
         >
+
             <div class="w-full h-full flex items-center justify-center overflow-hidden">
 
                 <img
@@ -287,21 +447,34 @@
                 >
 
             </div>
+
         </section>
 
 
-        <!-- ART -->
-        <section id="art" class="bg-white py-16">
+        <!-- ==================================================
+             ART
+        ================================================== -->
 
+        <section
+            id="art"
+            class="bg-white py-16 scroll-mt-24"
+        >
+
+            <!-- Section heading -->
             <div class="max-w-4xl mx-auto px-6 pb-4">
+
                 <h2 class="text-3xl font-ovo text-red-500 tracking-wide">
                     Art
                 </h2>
+
             </div>
 
+
+            <!-- Section content -->
             <div class="max-w-4xl mx-auto px-6 py-4">
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+
 
                     <!-- Traditional -->
                     <button
@@ -309,6 +482,7 @@
                         onclick="showPage('traditional')"
                         class="text-left space-y-4 cursor-pointer group focus:outline-none"
                     >
+
                         <div class="overflow-hidden rounded-sm shadow-sm bg-gray-50">
 
                             <img
@@ -322,6 +496,7 @@
                         <h3 class="font-semibold text-gray-600 group-hover:text-red-500 transition-colors">
                             Traditional
                         </h3>
+
                     </button>
 
 
@@ -331,6 +506,7 @@
                         onclick="showPage('sketches')"
                         class="text-left space-y-4 cursor-pointer group focus:outline-none"
                     >
+
                         <div class="overflow-hidden rounded-sm shadow-sm bg-gray-50">
 
                             <img
@@ -344,6 +520,7 @@
                         <h3 class="font-semibold text-gray-600 group-hover:text-red-500 transition-colors">
                             Sketches
                         </h3>
+
                     </button>
 
 
@@ -353,6 +530,7 @@
                         onclick="showPage('digital')"
                         class="text-left space-y-4 cursor-pointer group focus:outline-none"
                     >
+
                         <div class="overflow-hidden rounded-sm shadow-sm bg-gray-50">
 
                             <img
@@ -366,11 +544,13 @@
                         <h3 class="font-semibold text-gray-600 group-hover:text-red-500 transition-colors">
                             Digital
                         </h3>
+
                     </button>
 
                 </div>
 
 
+                <!-- Etsy -->
                 <a
                     href="https://www.etsy.com/shop/lailasabzi"
                     target="_blank"
@@ -381,13 +561,17 @@
                 </a>
 
             </div>
+
         </section>
 
 
-        <!-- ACTING -->
+        <!-- ==================================================
+             ACTING
+        ================================================== -->
+
         <section
             id="acting"
-            class="bg-gray-50/70 py-16 border-y border-gray-100"
+            class="bg-gray-50/70 py-16 border-y border-gray-100 scroll-mt-24"
         >
 
             <div class="max-w-4xl mx-auto px-6 pb-4">
@@ -403,36 +587,58 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
 
-                    <div class="p-6 bg-white border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md">
+
+                    <!-- Skin Deep -->
+                    <div
+                        class="p-6 bg-white border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md"
+                    >
+
                         <h3 class="font-semibold text-gray-600">
                             Skin Deep
                         </h3>
+
                         <p class="text-sm mt-1">
                             Bartender | 2026
                         </p>
+
                     </div>
 
-                    <div class="p-6 bg-white border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md">
+
+                    <!-- Say No -->
+                    <div
+                        class="p-6 bg-white border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md"
+                    >
+
                         <h3 class="font-semibold text-gray-600">
                             Say No!
                         </h3>
+
                         <p class="text-sm mt-1">
                             Court Artist | 2025
                         </p>
+
                     </div>
 
-                    <div class="p-6 bg-white border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md">
+
+                    <!-- Doodhpatti -->
+                    <div
+                        class="p-6 bg-white border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md"
+                    >
+
                         <h3 class="font-semibold text-gray-600">
                             Doodhpatti
                         </h3>
+
                         <p class="text-sm mt-1">
                             Noor | 2021
                         </p>
+
                     </div>
 
                 </div>
 
 
+                <!-- IMDb -->
                 <a
                     href="https://www.imdb.com/name/nm16391435/?ref_=ext_shr_lnk"
                     target="_blank"
@@ -443,11 +649,18 @@
                 </a>
 
             </div>
+
         </section>
 
 
-        <!-- ABOUT -->
-        <section id="about" class="bg-white py-16">
+        <!-- ==================================================
+             ABOUT
+        ================================================== -->
+
+        <section
+            id="about"
+            class="bg-white py-16 scroll-mt-24"
+        >
 
             <div class="max-w-4xl mx-auto px-6 pb-4">
 
@@ -462,6 +675,8 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
 
+
+                    <!-- Text -->
                     <div class="flex flex-col justify-center">
 
                         <p class="text-base leading-relaxed text-justify hyphens-auto">
@@ -477,11 +692,12 @@
                     </div>
 
 
+                    <!-- Image -->
                     <div class="relative w-full h-full min-h-[300px] overflow-hidden group">
 
                         <img
                             src="about.jpg"
-                            alt="About Saba Yaqoob"
+                            alt="Saba Yaqoob"
                             class="w-full h-full object-contain animate-slow-fade transform group-hover:scale-105 transition-transform duration-700 shadow-sm"
                             onerror="this.src='https://placehold.co/400x500/f3f4f6/a3a3a3?text=Saba+Yaqoob'"
                         >
@@ -495,12 +711,16 @@
         </section>
 
 
-        <!-- CONTACT -->
+        <!-- ==================================================
+             CONTACT
+        ================================================== -->
+
         <section
             id="contact"
-            class="bg-gray-50/70 py-16 border-t border-gray-100"
+            class="bg-gray-50/70 py-16 border-t border-gray-100 scroll-mt-24"
         >
 
+            <!-- Contact heading -->
             <div class="max-w-4xl mx-auto px-6 pb-4">
 
                 <h2 class="text-3xl font-ovo text-blue-500 tracking-wide">
@@ -510,10 +730,16 @@
             </div>
 
 
-            <div class="max-w-4xl mx-auto px-6 py-4 space-y-12">
+            <!-- IMPORTANT:
+                 Everything below uses the exact same
+                 max-w-4xl mx-auto px-6 container.
+            -->
+
+            <div class="max-w-4xl mx-auto px-6 py-4">
+
 
                 <!-- Email -->
-                <div>
+                <div class="mb-12">
 
                     <p class="text-lg">
 
@@ -531,168 +757,200 @@
                 </div>
 
 
-                <!-- MAILCHIMP -->
-                <div id="mc_embed_shell">
+                <!-- ==================================================
+                     NEWSLETTER
+                ================================================== -->
 
-                    <div id="mc_embed_signup">
+                <div class="w-full mb-12">
 
-                        <form
-                            action="https://gmail.us20.list-manage.com/subscribe/post?u=97f0ae89cf3c18a9c17b3ff28&amp;id=931c785ead&amp;f_id=001e76eef0"
-                            method="post"
-                            id="mc-embedded-subscribe-form"
-                            name="mc-embedded-subscribe-form"
-                            class="validate"
-                            target="_blank"
+                    <div
+                        id="mc_embed_shell"
+                        class="w-full"
+                    >
+
+                        <div
+                            id="mc_embed_signup"
+                            class="w-full"
                         >
 
-                            <div id="mc_embed_signup_scroll">
+                            <form
+                                action="https://gmail.us20.list-manage.com/subscribe/post?u=97f0ae89cf3c18a9c17b3ff28&amp;id=931c785ead&amp;f_id=001e76eef0"
+                                method="post"
+                                id="mc-embedded-subscribe-form"
+                                name="mc-embedded-subscribe-form"
+                                class="validate w-full"
+                                target="_blank"
+                            >
 
-                                <h2>
-                                    Sign up for updates :)
-                                </h2>
-
-                                <p class="text-sm text-gray-500 mb-6">
-                                    We respect your privacy.
-                                </p>
-
-
-                                <!-- Email -->
-                                <div class="mc-field-group">
-
-                                    <label for="mce-EMAIL">
-                                        Email Address
-                                        <span class="asterisk">*</span>
-                                    </label>
-
-                                    <input
-                                        type="email"
-                                        name="EMAIL"
-                                        class="required email"
-                                        id="mce-EMAIL"
-                                        required
-                                        value=""
-                                        autocomplete="email"
-                                    >
-
-                                </div>
+                                <div id="mc_embed_signup_scroll">
 
 
-                                <!-- First Name -->
-                                <div class="mc-field-group">
-
-                                    <label for="mce-FNAME">
-                                        First Name
-                                    </label>
-
-                                    <input
-                                        type="text"
-                                        name="FNAME"
-                                        class="text"
-                                        id="mce-FNAME"
-                                        value=""
-                                        autocomplete="given-name"
-                                    >
-
-                                </div>
+                                    <!-- Newsletter title -->
+                                    <h2>
+                                        Sign up for updates :)
+                                    </h2>
 
 
-                                <!-- Last Name -->
-                                <div class="mc-field-group">
-
-                                    <label for="mce-LNAME">
-                                        Last Name
-                                    </label>
-
-                                    <input
-                                        type="text"
-                                        name="LNAME"
-                                        class="text"
-                                        id="mce-LNAME"
-                                        value=""
-                                        autocomplete="family-name"
-                                    >
-
-                                </div>
+                                    <p class="text-sm text-gray-500 mb-6">
+                                        We respect your privacy.
+                                    </p>
 
 
-                                <!-- Responses -->
-                                <div id="mce-responses" class="clear foot">
+                                    <!-- Email -->
+                                    <div class="mc-field-group">
 
-                                    <div
-                                        class="response"
-                                        id="mce-error-response"
-                                        style="display: none;"
-                                    ></div>
-
-                                    <div
-                                        class="response"
-                                        id="mce-success-response"
-                                        style="display: none;"
-                                    ></div>
-
-                                </div>
-
-
-                                <!-- Honeypot -->
-                                <div
-                                    aria-hidden="true"
-                                    style="position: absolute; left: -5000px;"
-                                >
-                                    <input
-                                        type="text"
-                                        name="b_97f0ae89cf3c18a9c17b3ff28_931c785ead"
-                                        tabindex="-1"
-                                        value=""
-                                    >
-                                </div>
-
-
-                                <!-- Submit -->
-                                <div class="optionalParent">
-
-                                    <div class="clear foot">
+                                        <label for="mce-EMAIL">
+                                            Email Address
+                                            <span class="asterisk">*</span>
+                                        </label>
 
                                         <input
-                                            type="submit"
-                                            name="subscribe"
-                                            id="mc-embedded-subscribe"
-                                            class="button"
-                                            value="Subscribe"
+                                            type="email"
+                                            name="EMAIL"
+                                            class="required email"
+                                            id="mce-EMAIL"
+                                            required
+                                            value=""
+                                            autocomplete="email"
                                         >
 
-                                        <p class="mt-4">
+                                    </div>
 
-                                            <a
-                                                href="http://eepurl.com/ZzrV39Pe6l"
-                                                title="Mailchimp - email marketing made easy and fun"
+
+                                    <!-- First Name -->
+                                    <div class="mc-field-group">
+
+                                        <label for="mce-FNAME">
+                                            First Name
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            name="FNAME"
+                                            class="text"
+                                            id="mce-FNAME"
+                                            value=""
+                                            autocomplete="given-name"
+                                        >
+
+                                    </div>
+
+
+                                    <!-- Last Name -->
+                                    <div class="mc-field-group">
+
+                                        <label for="mce-LNAME">
+                                            Last Name
+                                        </label>
+
+                                        <input
+                                            type="text"
+                                            name="LNAME"
+                                            class="text"
+                                            id="mce-LNAME"
+                                            value=""
+                                            autocomplete="family-name"
+                                        >
+
+                                    </div>
+
+
+                                    <!-- Mailchimp responses -->
+                                    <div
+                                        id="mce-responses"
+                                        class="clear foot"
+                                    >
+
+                                        <div
+                                            class="response"
+                                            id="mce-error-response"
+                                            style="display: none;"
+                                        ></div>
+
+                                        <div
+                                            class="response"
+                                            id="mce-success-response"
+                                            style="display: none;"
+                                        ></div>
+
+                                    </div>
+
+
+                                    <!-- Honeypot -->
+                                    <div
+                                        aria-hidden="true"
+                                        style="position: absolute; left: -5000px;"
+                                    >
+
+                                        <input
+                                            type="text"
+                                            name="b_97f0ae89cf3c18a9c17b3ff28_931c785ead"
+                                            tabindex="-1"
+                                            value=""
+                                        >
+
+                                    </div>
+
+
+                                    <!-- Submit -->
+                                    <div class="optionalParent">
+
+                                        <div class="clear foot">
+
+                                            <input
+                                                type="submit"
+                                                name="subscribe"
+                                                id="mc-embedded-subscribe"
+                                                class="button"
+                                                value="Subscribe"
                                             >
-                                                <img
-                                                    class="refferal_badge"
-                                                    src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"
-                                                    alt="Intuit Mailchimp"
-                                                    style="width: 220px; height: 40px; display: inline-block; padding: 2px 0;"
-                                                >
-                                            </a>
 
-                                        </p>
+
+                                            <!-- Mailchimp branding -->
+                                            <p class="mt-4">
+
+                                                <a
+                                                    href="http://eepurl.com/ZzrV39Pe6l"
+                                                    title="Mailchimp - email marketing made easy and fun"
+                                                >
+
+                                                    <img
+                                                        class="refferal_badge"
+                                                        src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"
+                                                        alt="Intuit Mailchimp"
+                                                        style="width: 220px; height: 40px; padding: 2px 0;"
+                                                    >
+
+                                                </a>
+
+                                            </p>
+
+                                        </div>
 
                                     </div>
 
                                 </div>
 
-                            </div>
+                            </form>
 
-                        </form>
+                        </div>
 
                     </div>
 
                 </div>
 
 
-                <!-- SOCIAL CHANNELS -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm pt-2">
+                <!-- ==================================================
+                     SOCIAL CHANNELS
+                ================================================== -->
 
-                    <div class="bg-white p-6 border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+
+
+                    <!-- Main Channels -->
+                    <div
+                        class="bg-white p-6 border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md"
+                    >
 
                         <h4 class="font-semibold text-gray-700 mb-3">
                             Main Channels
@@ -741,7 +999,10 @@
                     </div>
 
 
-                    <div class="bg-white p-6 border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md">
+                    <!-- Art Channels -->
+                    <div
+                        class="bg-white p-6 border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md"
+                    >
 
                         <h4 class="font-semibold text-gray-700 mb-3">
                             Art Channels
@@ -789,13 +1050,17 @@
     </div>
 
 
-    <!-- TRADITIONAL ART PAGE -->
+    <!-- ==================================================
+         TRADITIONAL ART PAGE
+    ================================================== -->
+
     <div
         id="page-traditional"
         class="hidden max-w-4xl mx-auto px-6 py-20 animate-fade-in"
     >
 
         <button
+            type="button"
             onclick="showPage('home', '#art')"
             class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors"
         >
@@ -819,13 +1084,17 @@
     </div>
 
 
-    <!-- SKETCHES PAGE -->
+    <!-- ==================================================
+         SKETCHES PAGE
+    ================================================== -->
+
     <div
         id="page-sketches"
         class="hidden max-w-4xl mx-auto px-6 py-20 animate-fade-in"
     >
 
         <button
+            type="button"
             onclick="showPage('home', '#art')"
             class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors"
         >
@@ -849,13 +1118,17 @@
     </div>
 
 
-    <!-- DIGITAL ART PAGE -->
+    <!-- ==================================================
+         DIGITAL ART PAGE
+    ================================================== -->
+
     <div
         id="page-digital"
         class="hidden max-w-4xl mx-auto px-6 py-20 animate-fade-in"
     >
 
         <button
+            type="button"
             onclick="showPage('home', '#art')"
             class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors"
         >
@@ -881,7 +1154,10 @@
 </main>
 
 
-<!-- FOOTER -->
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
 <footer
     class="py-12 text-center text-gray-400 text-sm border-t border-gray-50 flex flex-col items-center justify-center bg-white"
 >
@@ -897,11 +1173,28 @@
 </footer>
 
 
-<!-- JAVASCRIPT -->
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
 <script>
+
+    /* --------------------------------------------------
+       PAGE NAVIGATION
+    -------------------------------------------------- */
+
     function showPage(pageId, targetHash = null) {
 
-        // Hide all pages
+        /*
+         * Hide every page container.
+         *
+         * Using [id^="page-"] is intentional:
+         * page-home
+         * page-traditional
+         * page-sketches
+         * page-digital
+         */
+
         document
             .querySelectorAll('[id^="page-"]')
             .forEach(page => {
@@ -909,29 +1202,52 @@
             });
 
 
-        // Show requested page
-        const targetPage = document.getElementById('page-' + pageId);
+        /*
+         * Find the requested page.
+         */
+
+        const targetPage =
+            document.getElementById('page-' + pageId);
+
 
         if (!targetPage) {
-            console.warn('Page not found:', pageId);
+
+            console.warn(
+                'Page not found:',
+                pageId
+            );
+
             return;
         }
+
+
+        /*
+         * Show requested page.
+         */
 
         targetPage.classList.remove('hidden');
 
 
-        // Close mobile menu
+        /*
+         * Close mobile navigation.
+         */
+
         closeMobileMenu();
 
 
-        // Scroll
+        /*
+         * Scroll to a section if one was provided.
+         */
+
         setTimeout(() => {
 
             if (targetHash) {
 
-                const element = document.querySelector(targetHash);
+                const element =
+                    document.querySelector(targetHash);
 
                 if (element) {
+
                     element.scrollIntoView({
                         behavior: 'smooth',
                         block: 'start'
@@ -939,8 +1255,12 @@
 
                     return;
                 }
-
             }
+
+
+            /*
+             * Otherwise scroll to top.
+             */
 
             window.scrollTo({
                 top: 0,
@@ -951,19 +1271,32 @@
     }
 
 
+    /* --------------------------------------------------
+       MOBILE MENU
+    -------------------------------------------------- */
+
     function toggleMenu() {
 
-        const menu = document.getElementById('mobileMenu');
-        const button = document.getElementById('menuButton');
+        const menu =
+            document.getElementById('mobileMenu');
+
+        const button =
+            document.getElementById('menuButton');
+
 
         if (!menu) {
             return;
         }
 
-        const isOpen = !menu.classList.contains('hidden');
+
+        const isOpen =
+            !menu.classList.contains('hidden');
+
 
         if (isOpen) {
+
             closeMobileMenu();
+
         } else {
 
             menu.classList.remove('hidden');
@@ -971,34 +1304,69 @@
 
             document.body.classList.add('menu-open');
 
+
             if (button) {
-                button.setAttribute('aria-expanded', 'true');
-                button.setAttribute('aria-label', 'Close menu');
+
+                button.setAttribute(
+                    'aria-expanded',
+                    'true'
+                );
+
+                button.setAttribute(
+                    'aria-label',
+                    'Close menu'
+                );
+
                 button.textContent = '×';
             }
         }
     }
 
 
+    /* --------------------------------------------------
+       CLOSE MOBILE MENU
+    -------------------------------------------------- */
+
     function closeMobileMenu() {
 
-        const menu = document.getElementById('mobileMenu');
-        const button = document.getElementById('menuButton');
+        const menu =
+            document.getElementById('mobileMenu');
+
+        const button =
+            document.getElementById('menuButton');
+
 
         if (menu) {
+
             menu.classList.add('hidden');
             menu.classList.remove('flex');
+
         }
+
 
         document.body.classList.remove('menu-open');
 
+
         if (button) {
-            button.setAttribute('aria-expanded', 'false');
-            button.setAttribute('aria-label', 'Open menu');
+
+            button.setAttribute(
+                'aria-expanded',
+                'false'
+            );
+
+            button.setAttribute(
+                'aria-label',
+                'Open menu'
+            );
+
             button.textContent = '☰';
         }
     }
 
+
+    /* --------------------------------------------------
+       MOBILE NAVIGATION
+    -------------------------------------------------- */
 
     function navigateFromMobile(hash) {
 
@@ -1008,24 +1376,70 @@
     }
 
 
-    // Close menu if the browser is resized to desktop
-    window.addEventListener('resize', () => {
+    /* --------------------------------------------------
+       ESCAPE KEY
+    -------------------------------------------------- */
 
-        if (window.innerWidth >= 768) {
-            closeMobileMenu();
+    document.addEventListener(
+        'keydown',
+        function(event) {
+
+            if (event.key === 'Escape') {
+                closeMobileMenu();
+            }
+
         }
+    );
 
-    });
 
+    /* --------------------------------------------------
+       RESIZE
+    -------------------------------------------------- */
 
-    // Allow Escape key to close mobile menu
-    document.addEventListener('keydown', event => {
+    window.addEventListener(
+        'resize',
+        function() {
 
-        if (event.key === 'Escape') {
-            closeMobileMenu();
+            if (window.innerWidth >= 768) {
+                closeMobileMenu();
+            }
+
         }
+    );
 
-    });
+
+    /* --------------------------------------------------
+       HEADER SHADOW ON SCROLL
+    -------------------------------------------------- */
+
+    window.addEventListener(
+        'scroll',
+        function() {
+
+            const header =
+                document.getElementById('mainHeader');
+
+            if (!header) {
+                return;
+            }
+
+
+            if (window.scrollY > 10) {
+
+                header.classList.add(
+                    'shadow-sm'
+                );
+
+            } else {
+
+                header.classList.remove(
+                    'shadow-sm'
+                );
+            }
+
+        }
+    );
+
 </script>
 ```
 
