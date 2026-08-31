@@ -25,13 +25,13 @@
             animation: fadeIn 0.6s ease-out forwards;
         }
 
-        /* Subtle Image Reveal Animation */
-        @keyframes imageReveal {
-            from { opacity: 0; transform: scale(0.97); }
+        /* Slow & Smooth Image Fade-In Animation */
+        @keyframes slowFadeIn {
+            from { opacity: 0; transform: scale(0.98); }
             to { opacity: 1; transform: scale(1); }
         }
-        .animate-image-reveal {
-            animation: imageReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        .animate-slow-fade {
+            animation: slowFadeIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
         }
     </style>
 </head>
@@ -66,9 +66,9 @@
 
     <div class="flex-grow">
         <div id="page-home" class="animate-fade-in">
-            <!-- Hero Image: stretched to cover full screen on large viewports -->
-            <section id="hero" class="w-full h-[80vh] md:h-[90vh] overflow-hidden flex items-center justify-center bg-gray-50">
-                <img src="hero3.jpg" alt="Saba Yaqoob" class="w-full h-full object-cover object-center shadow-sm animate-image-reveal transform hover:scale-[1.01] transition-transform duration-700" onerror="this.src='https://placehold.co/1600x900/f3f4f6/a3a3a3?text=Saba+Yaqoob'">
+            <!-- Hero Image with slow fade-in -->
+            <section id="hero" class="w-full overflow-hidden flex items-center justify-center bg-gray-50">
+                <img src="hero3.jpg" alt="Saba Yaqoob" class="w-full h-auto max-h-[90vh] object-cover object-center shadow-sm animate-slow-fade transform hover:scale-[1.01] transition-transform duration-700" onerror="this.src='https://placehold.co/1600x900/f3f4f6/a3a3a3?text=Saba+Yaqoob'">
             </section>
 
             <!-- ART SECTION -->
@@ -82,26 +82,26 @@
                         <!-- Traditional Art Category -->
                         <div class="space-y-4 cursor-pointer group" onclick="showPage('traditional')">
                             <div class="overflow-hidden rounded-sm shadow-sm bg-gray-50">
-                                <img src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Traditional" alt="Traditional" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                                <img src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Traditional" alt="Traditional" class="w-full h-64 object-cover animate-slow-fade transform group-hover:scale-105 transition-transform duration-500">
                             </div>
                             <h3 class="font-semibold text-gray-600 group-hover:text-red-500 transition-colors">Traditional</h3>
                         </div>
                         <!-- Sketches Category -->
                         <div class="space-y-4 cursor-pointer group" onclick="showPage('sketches')">
                             <div class="overflow-hidden rounded-sm shadow-sm bg-gray-50">
-                                <img src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Sketches" alt="Sketches" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                                <img src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Sketches" alt="Sketches" class="w-full h-64 object-cover animate-slow-fade transform group-hover:scale-105 transition-transform duration-500">
                             </div>
                             <h3 class="font-semibold text-gray-600 group-hover:text-red-500 transition-colors">Sketches</h3>
                         </div>
                         <!-- Digital Category -->
                         <div class="space-y-4 cursor-pointer group" onclick="showPage('digital')">
                             <div class="overflow-hidden rounded-sm shadow-sm bg-gray-50">
-                                <img src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Digital" alt="Digital" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                                <img src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Digital" alt="Digital" class="w-full h-64 object-cover animate-slow-fade transform group-hover:scale-105 transition-transform duration-500">
                             </div>
                             <h3 class="font-semibold text-gray-600 group-hover:text-red-500 transition-colors">Digital</h3>
                         </div>
                     </div>
-                    <a href="https://www.etsy.com/shop/lailasabzi" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 bg-red-50 text-red-600 font-semibold text-sm rounded-sm hover:bg-red-100 transform hover:-translate-y-0.5 transition-all shadow-sm">Etsy Shop (Restock is in the works!)</a>
+                    <a href="https://www.etsy.com/shop/lailasabzi" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 bg-red-50 text-red-600 font-semibold text-sm rounded-sm hover:bg-red-100 transform hover:-translate-y-0.5 transition-all shadow-sm">Visit Etsy Shop (Restock is in the works!)</a>
                 </div>
             </section>
 
@@ -138,7 +138,7 @@
                         </div>
                         
                         <div class="relative w-full h-full min-h-[300px] overflow-hidden group">
-                            <img src="about.jpg" alt="About Image" class="w-full h-full object-contain transform group-hover:scale-105 transition-transform duration-700 shadow-sm" onerror="this.src='https://placehold.co/400x500/f3f4f6/a3a3a3?text=Saba+Yaqoob'">
+                            <img src="about.jpg" alt="About Image" class="w-full h-full object-contain animate-slow-fade transform group-hover:scale-105 transition-transform duration-700 shadow-sm" onerror="this.src='https://placehold.co/400x500/f3f4f6/a3a3a3?text=Saba+Yaqoob'">
                         </div>
                     </div>
                 </div>
@@ -183,7 +183,7 @@
             <button onclick="showPage('home', '#art')" class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors">← Back to Art</button>
             <h2 class="text-4xl font-ovo font-bold mb-6 text-red-500">Traditional Art</h2>
             <p class="text-gray-500 mb-8">A collection of physical works, oils, and mixed media pieces.</p>
-            <img src="https://placehold.co/900x500/f3f4f6/a3a3a3?text=Traditional+Works+Gallery" class="w-full mb-6 shadow-sm animate-image-reveal" alt="Traditional Works">
+            <img src="https://placehold.co/900x500/f3f4f6/a3a3a3?text=Traditional+Works+Gallery" class="w-full mb-6 shadow-sm animate-slow-fade" alt="Traditional Works">
         </div>
 
         <!-- Sketches Page -->
@@ -191,7 +191,7 @@
             <button onclick="showPage('home', '#art')" class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors">← Back to Art</button>
             <h2 class="text-4xl font-ovo font-bold mb-6 text-red-500">Sketches & Studies</h2>
             <p class="text-gray-500 mb-8">Charcoal, graphite, and exploratory ink studies capturing raw expressions.</p>
-            <img src="https://placehold.co/900x500/f3f4f6/a3a3a3?text=Sketches+Gallery" class="w-full mb-6 shadow-sm animate-image-reveal" alt="Sketches">
+            <img src="https://placehold.co/900x500/f3f4f6/a3a3a3?text=Sketches+Gallery" class="w-full mb-6 shadow-sm animate-slow-fade" alt="Sketches">
         </div>
 
         <!-- Digital Art Page -->
@@ -199,7 +199,7 @@
             <button onclick="showPage('home', '#art')" class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors">← Back to Art</button>
             <h2 class="text-4xl font-ovo font-bold mb-6 text-red-500">Digital Art</h2>
             <p class="text-gray-500 mb-8">Digital illustrations, scans, and graphic works.</p>
-            <img src="https://placehold.co/900x500/f3f4f6/a3a3a3?text=Digital+Art+Gallery" class="w-full mb-6 shadow-sm animate-image-reveal" alt="Digital Art">
+            <img src="https://placehold.co/900x500/f3f4f6/a3a3a3?text=Digital+Art+Gallery" class="w-full mb-6 shadow-sm animate-slow-fade" alt="Digital Art">
         </div>
     </div>
 
