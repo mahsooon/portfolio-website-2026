@@ -1,1051 +1,1033 @@
 <!DOCTYPE html>
+
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f98b.png">
-    
-    <title>Saba Yaqoob</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Ovo&display=swap');
-        body { font-family: 'Inter', sans-serif; color: #666666; }
-        .font-ovo { font-family: 'Ovo', serif; }
-        .hover-transition { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
 
-        /* Custom Keyframe Animations for Smooth Fades */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .animate-fade-in {
-            animation: fadeIn 0.6s ease-out forwards;
+```
+<link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f98b.png">
+
+<title>Saba Yaqoob</title>
+
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Fonts + Custom Styles -->
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Ovo&display=swap');
+
+    body {
+        font-family: 'Inter', sans-serif;
+        color: #666666;
+    }
+
+    .font-ovo {
+        font-family: 'Ovo', serif;
+    }
+
+    .hover-transition {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    /* Fade animation */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
         }
 
-        /* Slow & Smooth Image Fade-In Animation */
-        @keyframes slowFadeIn {
-            from { opacity: 0; transform: scale(0.98); }
-            to { opacity: 1; transform: scale(1); }
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
-        .animate-slow-fade {
-            animation: slowFadeIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .animate-fade-in {
+        animation: fadeIn 0.6s ease-out forwards;
+    }
+
+    /* Image fade */
+    @keyframes slowFadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.98);
         }
-    </style>
+
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .animate-slow-fade {
+        animation: slowFadeIn 1.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    /* Mailchimp */
+    #mc_embed_signup {
+        background: transparent !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        font-family: 'Inter', sans-serif !important;
+        color: #4b5563 !important;
+    }
+
+    #mc_embed_signup h2 {
+        font-family: 'Ovo', serif !important;
+        font-size: 1.875rem !important;
+        color: #4b5563 !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    #mc_embed_signup .indicates-required {
+        display: none !important;
+    }
+
+    #mc_embed_signup .mc-field-group {
+        width: 100% !important;
+        padding-bottom: 1rem !important;
+    }
+
+    #mc_embed_signup .mc-field-group label {
+        color: #4b5563 !important;
+        font-weight: 500 !important;
+        font-size: 0.875rem !important;
+    }
+
+    #mc_embed_signup .mc-field-group input {
+        box-sizing: border-box !important;
+        border: 1px solid #e5e7eb !important;
+        border-radius: 0.25rem !important;
+        padding: 0.65rem 0.75rem !important;
+        width: 100% !important;
+        margin-top: 0.25rem !important;
+        color: #4b5563 !important;
+        background: white !important;
+        font-family: 'Inter', sans-serif !important;
+    }
+
+    #mc_embed_signup .mc-field-group input:focus {
+        outline: none !important;
+        border-color: #93c5fd !important;
+        box-shadow: 0 0 0 2px rgba(147, 197, 253, 0.2) !important;
+    }
+
+    #mc_embed_signup .button {
+        background-color: #3b82f6 !important;
+        color: white !important;
+        border-radius: 0.25rem !important;
+        padding: 0.65rem 1.5rem !important;
+        font-family: 'Inter', sans-serif !important;
+        font-weight: 600 !important;
+        cursor: pointer !important;
+        border: none !important;
+        transition: background-color 0.2s, transform 0.2s !important;
+    }
+
+    #mc_embed_signup .button:hover {
+        background-color: #2563eb !important;
+        transform: translateY(-1px);
+    }
+
+    #mc_embed_signup .response {
+        margin: 1rem 0 !important;
+    }
+
+    #mc_embed_signup .optionalParent {
+        margin-top: 0.5rem !important;
+    }
+
+    /* Keep Mailchimp branding subtle */
+    #mc_embed_signup .refferal_badge {
+        opacity: 0.65;
+    }
+
+    /* Mobile menu */
+    body.menu-open {
+        overflow: hidden;
+    }
+</style>
+```
+
 </head>
 
 <body class="bg-white text-gray-600 flex flex-col min-h-screen">
-    
-    <header id="mainHeader" class="flex flex-col px-10 py-4 border-b border-gray-50 sticky top-0 bg-white/90 backdrop-blur-md z-50 transition-all">
-        <div class="flex justify-between items-center">
-            <h1 class="text-3xl font-ovo text-gray-600 tracking-wide cursor-pointer inline-flex items-center gap-2 group" onclick="showPage('home', '#hero')">
-                <span>Saba Yaqoob</span>
-                <span class="inline-block transition-transform duration-500 group-hover:rotate-45 group-hover:scale-110">🌈</span>
-            </h1>
-            <button onclick="toggleMenu()" class="md:hidden text-2xl focus:outline-none hover:text-gray-900 transition-colors z-50 relative">☰</button>
 
-            <nav id="desktopMenu" class="hidden md:flex gap-6">
-                <a href="#art" onclick="showPage('home', '#art')" class="text-sm font-ovo tracking-wider hover:text-red-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-red-500 hover:after:w-full after:transition-all">Art</a>
-                <a href="#acting" onclick="showPage('home', '#acting')" class="text-sm font-ovo tracking-wider hover:text-green-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-green-500 hover:after:w-full after:transition-all">Acting</a>
-                <a href="#about" onclick="showPage('home', '#about')" class="text-sm font-ovo tracking-wider hover:text-purple-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-purple-500 hover:after:w-full after:transition-all">About</a>
-                <a href="#contact" onclick="showPage('home', '#contact')" class="text-sm font-ovo tracking-wider hover:text-blue-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-500 hover:after:w-full after:transition-all">Contact</a>
-            </nav>
-        </div>
-    </header>
+```
+<!-- HEADER -->
+<header
+    id="mainHeader"
+    class="flex flex-col px-6 md:px-10 py-4 border-b border-gray-50 sticky top-0 bg-white/90 backdrop-blur-md z-50 transition-all"
+>
+    <div class="flex justify-between items-center">
 
-    <nav id="mobileMenu" class="hidden fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8 text-center animate-fade-in">
-        <a href="#art" onclick="toggleMenu(); showPage('home', '#art')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-red-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-red-500 hover:after:w-full after:transition-all">Art</a>
-        <a href="#acting" onclick="toggleMenu(); showPage('home', '#acting')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-green-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-green-500 hover:after:w-full after:transition-all">Acting</a>
-        <a href="#about" onclick="toggleMenu(); showPage('home', '#about')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-purple-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-purple-500 hover:after:w-full after:transition-all">About</a>
-        <a href="#contact" onclick="toggleMenu(); showPage('home', '#contact')" class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-blue-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-500 hover:after:w-full after:transition-all">Contact</a>
-    </nav>
+        <h1
+            class="text-3xl font-ovo text-gray-600 tracking-wide cursor-pointer inline-flex items-center gap-2 group"
+            onclick="showPage('home', '#hero')"
+        >
+            <span>Saba Yaqoob</span>
 
-    <div class="flex-grow">
-        <div id="page-home" class="animate-fade-in">
-            <!-- Full-width edge-to-edge Hero Image Section with Mobile Viewport Height Fix -->
-            <section id="hero" class="w-full h-[calc(100svh-73px)] md:h-[calc(100vh-73px)] min-h-[400px] flex items-center justify-center bg-gray-50 overflow-hidden">
-                <div class="w-full h-full flex items-center justify-center overflow-hidden">
-                    <img src="hero3.jpg" alt="Saba Yaqoob" class="w-full h-full object-cover object-center shadow-sm animate-slow-fade transform hover:scale-105 transition-transform duration-700" onerror="this.src='https://placehold.co/1600x900/f3f4f6/a3a3a3?text=Saba+Yaqoob'">
-                </div>
-            </section>
+            <span class="inline-block transition-transform duration-500 group-hover:rotate-45 group-hover:scale-110">
+                🌈
+            </span>
+        </h1>
 
-            <!-- ART SECTION -->
-            <section id="art" class="bg-white py-16">
-                <div class="max-w-4xl mx-auto px-6 pb-4">
-                    <h2 class="text-3xl font-ovo text-red-500 tracking-wide">Art</h2>
-                </div>
-                
-                <div class="max-w-4xl mx-auto px-6 py-4">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                        <!-- Traditional Art Category -->
-                        <div class="space-y-4 cursor-pointer group" onclick="showPage('traditional')">
-                            <div class="overflow-hidden rounded-sm shadow-sm bg-gray-50">
-                                <img src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Traditional" alt="Traditional" class="w-full h-64 object-cover animate-slow-fade transform group-hover:scale-105 transition-transform duration-500">
-                            </div>
-                            <h3 class="font-semibold text-gray-600 group-hover:text-red-500 transition-colors">Traditional</h3>
-                        </div>
-                        <!-- Sketches Category -->
-                        <div class="space-y-4 cursor-pointer group" onclick="showPage('sketches')">
-                            <div class="overflow-hidden rounded-sm shadow-sm bg-gray-50">
-                                <img src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Sketches" alt="Sketches" class="w-full h-64 object-cover animate-slow-fade transform group-hover:scale-105 transition-transform duration-500">
-                            </div>
-                            <h3 class="font-semibold text-gray-600 group-hover:text-red-500 transition-colors">Sketches</h3>
-                        </div>
-                        <!-- Digital Category -->
-                        <div class="space-y-4 cursor-pointer group" onclick="showPage('digital')">
-                            <div class="overflow-hidden rounded-sm shadow-sm bg-gray-50">
-                                <img src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Digital" alt="Digital" class="w-full h-64 object-cover animate-slow-fade transform group-hover:scale-105 transition-transform duration-500">
-                            </div>
-                            <h3 class="font-semibold text-gray-600 group-hover:text-red-500 transition-colors">Digital</h3>
-                        </div>
-                    </div>
-                    <a href="https://www.etsy.com/shop/lailasabzi" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 bg-red-50 text-red-600 font-semibold text-sm rounded-sm hover:bg-red-100 transform hover:-translate-y-0.5 transition-all shadow-sm">Visit Etsy Shop (Restock is in the works!)</a>
-                </div>
-            </section>
+        <!-- Mobile menu button -->
+        <button
+            id="menuButton"
+            onclick="toggleMenu()"
+            class="md:hidden text-2xl focus:outline-none hover:text-gray-900 transition-colors z-50 relative"
+            aria-label="Open menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
 
-            <!-- ACTING SECTION -->
-            <section id="acting" class="bg-gray-50/70 py-16 border-y border-gray-100">
-                <div class="max-w-4xl mx-auto px-6 pb-4">
-                    <h2 class="text-3xl font-ovo text-green-500 tracking-wide">Acting</h2>
-                </div>
+        <!-- Desktop navigation -->
+        <nav id="desktopMenu" class="hidden md:flex gap-6">
 
-                <div class="max-w-4xl mx-auto px-6 py-4">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-                        <div class="p-6 bg-white border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md"><h3 class="font-semibold text-gray-600">Skin Deep</h3><p class="text-sm mt-1">Bartender | 2026</p></div>
-                        <div class="p-6 bg-white border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md"><h3 class="font-semibold text-gray-600">Say No!</h3><p class="text-sm mt-1">Court Artist | 2025</p></div>
-                        <div class="p-6 bg-white border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md"><h3 class="font-semibold text-gray-600">Doodhpatti</h3><p class="text-sm mt-1">Noor | 2021</p></div>
-                    </div>
-                    <a href="https://www.imdb.com/name/nm16391435/?ref_=ext_shr_lnk" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-3 bg-green-50 text-green-600 font-semibold text-sm rounded-sm hover:bg-green-100 transform hover:-translate-y-0.5 transition-all shadow-sm">View IMDb Profile →</a>
-                </div>
-            </section>
+            <a
+                href="#art"
+                onclick="showPage('home', '#art')"
+                class="text-sm font-ovo tracking-wider hover:text-red-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-red-500 hover:after:w-full after:transition-all"
+            >
+                Art
+            </a>
 
-            <!-- ABOUT SECTION -->
-            <section id="about" class="bg-white py-16">
-                <div class="max-w-4xl mx-auto px-6 pb-4">
-                    <h2 class="text-3xl font-ovo text-purple-500 tracking-wide">About</h2>
-                </div>
+            <a
+                href="#acting"
+                onclick="showPage('home', '#acting')"
+                class="text-sm font-ovo tracking-wider hover:text-green-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-green-500 hover:after:w-full after:transition-all"
+            >
+                Acting
+            </a>
 
-                <div class="max-w-4xl mx-auto px-6 py-4">
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
-                        <div class="flex flex-col justify-center">
-                            <p class="text-base leading-relaxed text-justify hyphens-auto">
-                                Saba is a multidisciplinary artist originally from Pakistan who has been based in Paris for over a decade. During her formative years in Hong Kong, she completely immersed herself in the arts—playing musical instruments, singing in choirs, and acting in theatrical productions. A lifelong creative, Saba has been painting and drawing since childhood. Her early fascination with performance was sparked by annual school plays, where she took on diverse roles ranging from a Troll to Felicity Morgan in Robert Swindells' Room 13, cementing her lifelong passion for acting.
-                                <br><br>
-                                Holding a Bachelor’s degree in Graphic Design (majoring in UX/UI) from LISAA Paris and a diverse professional background, she continually pushes her artistic boundaries through filmmaking and poetry. She remains dedicated to painting and sketching, specialising in emotive portraits that capture frequently stigmatised or "shunned" emotions.
-                            </p>
-                        </div>
-                        
-                        <div class="relative w-full h-full min-h-[300px] overflow-hidden group">
-                            <img src="about.jpg" alt="About Image" class="w-full h-full object-contain animate-slow-fade transform group-hover:scale-105 transition-transform duration-700 shadow-sm" onerror="this.src='https://placehold.co/400x500/f3f4f6/a3a3a3?text=Saba+Yaqoob'">
-                        </div>
-                    </div>
-                </div>
-            </section>
+            <a
+                href="#about"
+                onclick="showPage('home', '#about')"
+                class="text-sm font-ovo tracking-wider hover:text-purple-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-purple-500 hover:after:w-full after:transition-all"
+            >
+                About
+            </a>
 
-            <!-- CONTACT SECTION -->
-            <section id="contact" class="bg-gray-50/70 py-16 border-t border-gray-100">
-                <div class="max-w-4xl mx-auto px-6 pb-4">
-                    <h2 class="text-3xl font-ovo text-blue-500 tracking-wide">Contact</h2>
-                </div>
+            <a
+                href="#contact"
+                onclick="showPage('home', '#contact')"
+                class="text-sm font-ovo tracking-wider hover:text-blue-500 hover-transition relative after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-blue-500 hover:after:w-full after:transition-all"
+            >
+                Contact
+            </a>
 
-                <div class="max-w-4xl mx-auto px-6 py-4 space-y-12">
-                    <div>
-                        <p class="text-lg">For queries or collaborations, email at <a href="mailto:heysabawhy@gmail.com" class="text-blue-500 underline hover:opacity-75 transition-opacity">heysabawhy@gmail.com</a>.</p>
-                    </div>
-
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm pt-2">
-                        <div class="bg-white p-6 border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md">
-                            <h4 class="font-semibold text-gray-700 mb-3">Main Channels</h4>
-                            <div class="flex gap-4 flex-wrap">
-                                <a href="https://www.instagram.com/_sabawhy/" target="_blank" rel="noopener noreferrer" class="hover:text-orange-500 transition-colors">Instagram</a>
-                                <a href="https://www.tiktok.com/@__sabawhy" target="_blank" rel="noopener noreferrer" class="hover:text-orange-500 transition-colors">TikTok</a>
-                                <a href="https://www.youtube.com/@sabawhy" target="_blank" rel="noopener noreferrer" class="hover:text-orange-500 transition-colors">YouTube</a>
-                                <a href="https://substack.com/@sabawhy" target="_blank" rel="noopener noreferrer" class="hover:text-orange-500 transition-colors">Substack</a>
-                            </div>
-                        </div>
-                        <div class="bg-white p-6 border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md">
-                            <h4 class="font-semibold text-gray-700 mb-3">Art Channels</h4>
-                            <div class="flex gap-4 flex-wrap">
-                                <a href="https://www.instagram.com/lailasabzi/" target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition-colors">Instagram</a>
-                                <a href="https://www.tiktok.com/@lailasabzi" target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition-colors">TikTok</a>
-                                <a href="https://www.youtube.com/@lailasabzi" target="_blank" rel="noopener noreferrer" class="hover:text-red-500 transition-colors">YouTube</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </div>
-                    
-
-                   
-
-                    <div id="mc_embed_shell">
-      <link href="//cdn-images.mailchimp.com/embedcode/classic-061523.css" rel="stylesheet" type="text/css">
-  <style type="text/css">
-        #mc_embed_signup{background:#fff; false;clear:left; font:14px Helvetica,Arial,sans-serif; width: 600px;}
-        /* Add your own Mailchimp form style overrides in your site stylesheet or in this style block.
-           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
-</style>
-<div id="mc_embed_signup">
-    <form action="https://gmail.us20.list-manage.com/subscribe/post?u=97f0ae89cf3c18a9c17b3ff28&amp;id=931c785ead&amp;f_id=001e76eef0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-        <div id="mc_embed_signup_scroll"><h2>Sign up for updates :)</h2>
-<p class="text-sm text-gray-500 mb-4">We respect your privacy.</p>
-            <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-            <div class="mc-field-group"><label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label><input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value=""></div><div class="mc-field-group"><label for="mce-FNAME">First Name </label><input type="text" name="FNAME" class=" text" id="mce-FNAME" value=""></div><div class="mc-field-group"><label for="mce-LNAME">Last Name </label><input type="text" name="LNAME" class=" text" id="mce-LNAME" value=""></div>
-        <div id="mce-responses" class="clear foot">
-            <div class="response" id="mce-error-response" style="display: none;"></div>
-            <div class="response" id="mce-success-response" style="display: none;"></div>
-        </div>
-    <div aria-hidden="true" style="position: absolute; left: -5000px;">
-        /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
-        <input type="text" name="b_97f0ae89cf3c18a9c17b3ff28_931c785ead" tabindex="-1" value="">
+        </nav>
     </div>
-        <div class="optionalParent">
-            <div class="clear foot">
-                <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Subscribe">
-                <p style="margin: 0px auto;"><a href="http://eepurl.com/ZzrV39Pe6l" title="Mailchimp - email marketing made easy and fun"><span style="display: inline-block; background-color: transparent; border-radius: 4px;"><img class="refferal_badge" src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg" alt="Intuit Mailchimp" style="width: 220px; height: 40px; display: flex; padding: 2px 0px; justify-content: center; align-items: center;"></span></a></p>
+</header>
+
+
+<!-- MOBILE NAVIGATION -->
+<nav
+    id="mobileMenu"
+    class="hidden fixed inset-0 bg-white z-40 flex-col items-center justify-center gap-8 text-center animate-fade-in"
+>
+
+    <a
+        href="#art"
+        onclick="navigateFromMobile('#art')"
+        class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-red-500 hover-transition"
+    >
+        Art
+    </a>
+
+    <a
+        href="#acting"
+        onclick="navigateFromMobile('#acting')"
+        class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-green-500 hover-transition"
+    >
+        Acting
+    </a>
+
+    <a
+        href="#about"
+        onclick="navigateFromMobile('#about')"
+        class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-purple-500 hover-transition"
+    >
+        About
+    </a>
+
+    <a
+        href="#contact"
+        onclick="navigateFromMobile('#contact')"
+        class="text-2xl font-ovo tracking-wider text-gray-700 hover:text-blue-500 hover-transition"
+    >
+        Contact
+    </a>
+
+</nav>
+
+
+<!-- MAIN -->
+<main class="flex-grow">
+
+    <!-- HOME PAGE -->
+    <div id="page-home" class="animate-fade-in">
+
+        <!-- HERO -->
+        <section
+            id="hero"
+            class="w-full h-[calc(100svh-73px)] md:h-[calc(100vh-73px)] min-h-[400px] flex items-center justify-center bg-gray-50 overflow-hidden"
+        >
+            <div class="w-full h-full flex items-center justify-center overflow-hidden">
+
+                <img
+                    src="hero3.jpg"
+                    alt="Saba Yaqoob"
+                    class="w-full h-full object-cover object-center shadow-sm animate-slow-fade transform hover:scale-105 transition-transform duration-700"
+                    onerror="this.src='https://placehold.co/1600x900/f3f4f6/a3a3a3?text=Saba+Yaqoob'"
+                >
+
             </div>
-        </div>
-    </div>
-</form>
-</div>
-<script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script><script type="text/javascript">(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';fnames[3]='ADDRESS';ftypes[3]='address';fnames[4]='PHONE';ftypes[4]='phone';fnames[5]='BIRTHDAY';ftypes[5]='birthday';fnames[6]='COMPANY';ftypes[6]='text';}(jQuery));var $mcj = jQuery.noConflict(true);
-    // SMS Phone Multi-Country Functionality
-    if(!window.MC) {
-      window.MC = {};
-    }
-    window.MC.smsPhoneData = {
-      defaultCountryCode: 'FR',
-      programs: [],
-      smsProgramDataCountryNames: []
-    };
-
-    function getCountryUnicodeFlag(countryCode) {
-       return countryCode.toUpperCase().replace(/./g, (char) => String.fromCodePoint(char.charCodeAt(0) + 127397))
-    };
-
-    // HTML sanitization function to prevent XSS
-    function sanitizeHtml(str) {
-      if (typeof str !== 'string') return '';
-      return str
-        .replace(/&/g, '&amp;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;')
-        .replace(/"/g, '&quot;')
-        .replace(/'/g, '&#x27;')
-        .replace(/\//g, '&#x2F;');
-    }
-
-    // URL sanitization function to prevent javascript: and data: URLs
-    function sanitizeUrl(url) {
-      if (typeof url !== 'string') return '';
-      const trimmedUrl = url.trim().toLowerCase();
-      if (trimmedUrl.startsWith('javascript:') || trimmedUrl.startsWith('data:') || trimmedUrl.startsWith('vbscript:')) {
-        return '#';
-      }
-      return url;
-    }
-
-    const getBrowserLanguage = () => {
-      if (!window?.navigator?.language?.split('-')[1]) {
-        return window?.navigator?.language?.toUpperCase();
-      }
-      return window?.navigator?.language?.split('-')[1];
-    };
-
-    
-    function getDefaultCountryProgram(defaultCountryCode, smsProgramData) {
-      if (!smsProgramData || smsProgramData.length === 0) {
-        return null;
-      }
-
-      const browserLanguage = getBrowserLanguage();
-
-      if (browserLanguage) {
-        const foundProgram = smsProgramData.find(
-          (program) => program?.countryCode === browserLanguage,
-        );
-        if (foundProgram) {
-          return foundProgram;
-        }
-      }
-
-      if (defaultCountryCode) {
-        const foundProgram = smsProgramData.find(
-          (program) => program?.countryCode === defaultCountryCode,
-        );
-        if (foundProgram) {
-          return foundProgram;
-        }
-      }
-
-      return smsProgramData[0];
-    }
-
-    function updateSmsLegalText(countryCode, fieldName) {
-      if (!countryCode || !fieldName) {
-        return;
-      }
-      
-      const programs = window?.MC?.smsPhoneData?.programs;
-      if (!programs || !Array.isArray(programs)) {
-        return;
-      }
-      
-      const program = programs.find(program => program?.countryCode === countryCode);
-      if (!program || !program.requiredTemplate) {
-        return;
-      }
-    
-      
-      var smsConsentHtmlRenderingFixEnabled = true;
-      
-      const legalTextElement = document.querySelector('#legal-text-' + fieldName);
-      if (!legalTextElement) {
-        return;
-      }
-      
-      const divRegex = new RegExp('</?[div][^>]*>', 'gi');
-      const blockWrapperRegex = new RegExp('</?(?:div|p)[^>]*>', 'gi');
-      const fullAnchorRegex = new RegExp('<a.*?</a>', 'g');
-      const anchorRegex = new RegExp('<a href="(.*?)" target="(.*?)">(.*?)</a>');
-      
-      const template = smsConsentHtmlRenderingFixEnabled
-        ? program.requiredTemplate
-            .replace(/<\/p>\s*<p[^>]*>/gi, ' ')
-            .replace(blockWrapperRegex, '')
-        : program.requiredTemplate.replace(divRegex, '');
-      
-      
-
-      legalTextElement.textContent = '';
-      const parts = template.split(/(<a href=".*?" target=".*?">.*?<\/a>)/g);
-      parts.forEach(function(part) {
-        if (!part) {
-          return;
-        }
-        const anchorMatch = part.match(/<a href="(.*?)" target="(.*?)">(.*?)<\/a>/);
-        if (anchorMatch) {
-          const linkElement = document.createElement('a');
-          linkElement.href = sanitizeUrl(anchorMatch[1]);
-          linkElement.target = sanitizeHtml(anchorMatch[2]);
-          linkElement.textContent = sanitizeHtml(anchorMatch[3]);
-          legalTextElement.appendChild(linkElement);
-        } else {
-          legalTextElement.appendChild(document.createTextNode(part));
-        }
-      });
-          
-    }
-
-    function generateDropdownOptions(smsProgramData) {
-      if (!smsProgramData || smsProgramData.length === 0) {
-        return '';
-      }
-
-      var programs = false
-        ? smsProgramData.filter(function(p, i, arr) {
-            return arr.findIndex(function(q) { return q.countryCode === p.countryCode; }) === i;
-          })
-        : smsProgramData;
-      
-      return programs.map(program => {
-        const flag = getCountryUnicodeFlag(program.countryCode);
-        const countryName = getCountryName(program.countryCode);
-        const callingCode = program.countryCallingCode || '';
-        // Sanitize all values to prevent XSS
-        const sanitizedCountryCode = sanitizeHtml(program.countryCode || '');
-        const sanitizedCountryName = sanitizeHtml(countryName || '');
-        const sanitizedCallingCode = sanitizeHtml(callingCode || '');
-        return '<option value="' + sanitizedCountryCode + '">' + sanitizedCountryName + ' ' + sanitizedCallingCode + '</option>';
-      }).join('');
-    }
-
-    function getCountryName(countryCode) {
-      if (window.MC?.smsPhoneData?.smsProgramDataCountryNames && Array.isArray(window.MC.smsPhoneData.smsProgramDataCountryNames)) {
-        for (let i = 0; i < window.MC.smsPhoneData.smsProgramDataCountryNames.length; i++) {
-          if (window.MC.smsPhoneData.smsProgramDataCountryNames[i].code === countryCode) {
-            return window.MC.smsPhoneData.smsProgramDataCountryNames[i].name;
-          }
-        }
-      }
-      return countryCode;
-    }
-
-    function getDefaultPlaceholder(countryCode) {
-      if (!countryCode || typeof countryCode !== 'string') {
-        return '+1 000 000 0000'; // Default US placeholder
-      }
-      
-            var mockPlaceholders = [
-        {
-          countryCode: 'US',
-          placeholder: '+1 000 000 0000',
-          helpText: 'Include the US country code +1 before the phone number',
-        },
-        {
-          countryCode: 'GB',
-          placeholder: '+44 0000 000000',
-          helpText: 'Include the GB country code +44 before the phone number',
-        },
-        {
-          countryCode: 'CA',
-          placeholder: '+1 000 000 0000',
-          helpText: 'Include the CA country code +1 before the phone number',
-        },
-        {
-          countryCode: 'AU',
-          placeholder: '+61 000 000 000',
-          helpText: 'Include the AU country code +61 before the phone number',
-        },
-        {
-          countryCode: 'DE',
-          placeholder: '+49 000 0000000',
-          helpText: 'Fügen Sie vor der Telefonnummer die DE-Ländervorwahl +49 ein',
-        },
-        {
-          countryCode: 'FR',
-          placeholder: '+33 0 00 00 00 00',
-          helpText: 'Incluez le code pays FR +33 avant le numéro de téléphone',
-        },
-        {
-          countryCode: 'ES',
-          placeholder: '+34 000 000 000',
-          helpText: 'Incluya el código de país ES +34 antes del número de teléfono',
-        },
-        {
-          countryCode: 'NL',
-          placeholder: '+31 0 00000000',
-          helpText: 'Voeg de NL-landcode +31 toe vóór het telefoonnummer',
-        },
-        {
-          countryCode: 'BE',
-          placeholder: '+32 000 00 00 00',
-          helpText: 'Incluez le code pays BE +32 avant le numéro de téléphone',
-        },
-        {
-          countryCode: 'CH',
-          placeholder: '+41 00 000 00 00',
-          helpText: 'Fügen Sie vor der Telefonnummer die CH-Ländervorwahl +41 ein',
-        },
-        {
-          countryCode: 'AT',
-          placeholder: '+43 000 000 0000',
-          helpText: 'Fügen Sie vor der Telefonnummer die AT-Ländervorwahl +43 ein',
-        },
-        {
-          countryCode: 'IE',
-          placeholder: '+353 00 000 0000',
-          helpText: 'Include the IE country code +353 before the phone number',
-        },
-        {
-          countryCode: 'IT',
-          placeholder: '+39 000 000 0000',
-          helpText: 'Includere il prefisso internazionale IT +39 prima del numero di telefono',
-        },
-        {
-          countryCode: 'NO',
-          placeholder: '+47 000 00 000',
-          helpText: 'Inkluder NO landskode +47 før telefonnummeret',
-        },
-        {
-          countryCode: 'SE',
-          placeholder: '+46 00 000 00 00',
-          helpText: 'Inkludera SE landskod +46 före telefonnumret',
-        },
-        {
-          countryCode: 'DK',
-          placeholder: '+45 00 00 00 00',
-          helpText: 'Inkluder DK landekode +45 før telefonnummeret',
-        },
-        {
-          countryCode: 'FI',
-          placeholder: '+358 00 000 0000',
-          helpText: 'Sisällytä FI-maakoodi +358 ennen puhelinnumeroa',
-        },
-        {
-          countryCode: 'EE',
-          placeholder: '+372 0000 0000',
-          helpText: 'Lisage EE riigikood +372 telefoninumbri ette',
-        },
-        {
-          countryCode: 'PL',
-          placeholder: '+48 000 000 000',
-          helpText: 'Podaj numer kierunkowy PL +48 przed numerem telefonu',
-        },
-        {
-          countryCode: 'SK',
-          placeholder: '+421 000 000 000',
-          helpText: 'Pred telefónne číslo uveďte kód krajiny SK +421',
-        },
-        {
-          countryCode: 'LV',
-          placeholder: '+371 0000 0000',
-          helpText: 'Iekļaujiet LV valsts kodu +371 pirms tālruņa numura',
-        },
-        {
-          countryCode: 'LT',
-          placeholder: '+370 0000 0000',
-          helpText: 'Įtraukite LT šalies kodą +370 prieš telefono numerį',
-        },
-        {
-          countryCode: 'GR',
-          placeholder: '+30 000 000 0000',
-          helpText: 'Συμπεριλάβετε τον κωδικό χώρας GR +30 πριν από τον αριθμό τηλεφώνου',
-        },
-        {
-          countryCode: 'PT',
-          placeholder: '+351 000 000 000',
-          helpText: 'Inclua o código de país PT +351 antes do número de telefone',
-        },
-        {
-          countryCode: 'HR',
-          placeholder: '+385 00 000 0000',
-          helpText: 'Uključite HR pozivni broj države +385 prije telefonskog broja',
-        },
-        {
-          countryCode: 'SI',
-          placeholder: '+386 00 000 000',
-          helpText: 'Vključite SI kodo države +386 pred telefonsko številko',
-        },
-        {
-          countryCode: 'IS',
-          placeholder: '+354 000 0000',
-          helpText: 'Láttu IS landsnúmer +354 fylgja á undan símanúmerinu',
-        },
-        {
-          countryCode: 'LU',
-          placeholder: '+352 000 000 000',
-          helpText: 'Incluez le code pays LU +352 avant le numéro de téléphone',
-        },
-        {
-          countryCode: 'MC',
-          placeholder: '+377 00 00 00 00',
-          helpText: 'Incluez le code pays MC +377 avant le numéro de téléphone',
-        },
-        {
-          countryCode: 'AD',
-          placeholder: '+376 000 000',
-          helpText: 'Incloeu el codi de país AD +376 abans del número de telèfon',
-        },
-        {
-          countryCode: 'JE',
-          placeholder: '+44 0000 000000',
-          helpText: 'Include the JE country code +44 before the phone number',
-        },
-        {
-          countryCode: 'IM',
-          placeholder: '+44 0000 000000',
-          helpText: 'Include the IM country code +44 before the phone number',
-        },
-        {
-          countryCode: 'GG',
-          placeholder: '+44 0000 000000',
-          helpText: 'Include the GG country code +44 before the phone number',
-        },
-        {
-          countryCode: 'AL',
-          placeholder: '+355 00 000 0000',
-          helpText: 'Përfshini kodin e vendit AL +355 para numrit të telefonit',
-        },
-        {
-          countryCode: 'SM',
-          placeholder: '+378 0000 000000',
-          helpText: 'Includere il prefisso internazionale SM +378 prima del numero di telefono',
-        },
-        {
-          countryCode: 'FO',
-          placeholder: '+298 000000',
-          helpText: 'Inkluder FO landekode +298 før telefonnummeret',
-        },
-        {
-          countryCode: 'MT',
-          placeholder: '+356 0000 0000',
-          helpText: 'Include the MT country code +356 before the phone number',
-        },
-        {
-          countryCode: 'LI',
-          placeholder: '+423 000 0000',
-          helpText: 'Fügen Sie vor der Telefonnummer die LI-Ländervorwahl +423 ein',
-        },
-        {
-          countryCode: 'GI',
-          placeholder: '+350 000 00000',
-          helpText: 'Include the GI country code +350 before the phone number',
-        },
-        {
-          countryCode: 'MD',
-          placeholder: '+373 00 000 000',
-          helpText: 'Includeți codul de țară MD +373 înaintea numărului de telefon',
-        },
-        {
-          countryCode: 'HU',
-          placeholder: '+36 00 000 0000',
-          helpText: 'A telefonszám előtt adja meg a HU országkódot +36',
-        },
-        {
-          countryCode: 'NZ',
-          placeholder: '+64 00 000 0000',
-          helpText: 'Include the NZ country code +64 before the phone number',
-        },
-        {
-          countryCode: 'ME',
-          placeholder: '+382 00 000 000',
-          helpText: 'Uključite ME pozivni broj države +382 prije telefonskog broja',
-        },
-      ];
-
-      const selectedPlaceholder = mockPlaceholders.find(function(item) {
-        return item && item.countryCode === countryCode;
-      });
-      
-      return selectedPlaceholder ? selectedPlaceholder.placeholder : mockPlaceholders[0].placeholder;
-    }
-
-    function updatePlaceholder(countryCode, fieldName) {
-      if (!countryCode || !fieldName) {
-        return;
-      }
-      
-      const phoneInput = document.querySelector('#mce-' + fieldName);
-      if (!phoneInput) {
-        return;
-      }
-      
-      const placeholder = getDefaultPlaceholder(countryCode);
-      if (placeholder) {
-        phoneInput.placeholder = placeholder;
-      }
-    }
-
-    function updateCountryCodeInstruction(countryCode, fieldName) {
-      updatePlaceholder(countryCode, fieldName);
-      
-    }
-
-    function getDefaultHelpText(countryCode) {
-      var mockPlaceholders = [
-        {
-          countryCode: 'US',
-          placeholder: '+1 000 000 0000',
-          helpText: 'Include the US country code +1 before the phone number',
-        },
-        {
-          countryCode: 'GB',
-          placeholder: '+44 0000 000000',
-          helpText: 'Include the GB country code +44 before the phone number',
-        },
-        {
-          countryCode: 'CA',
-          placeholder: '+1 000 000 0000',
-          helpText: 'Include the CA country code +1 before the phone number',
-        },
-        {
-          countryCode: 'AU',
-          placeholder: '+61 000 000 000',
-          helpText: 'Include the AU country code +61 before the phone number',
-        },
-        {
-          countryCode: 'DE',
-          placeholder: '+49 000 0000000',
-          helpText: 'Fügen Sie vor der Telefonnummer die DE-Ländervorwahl +49 ein',
-        },
-        {
-          countryCode: 'FR',
-          placeholder: '+33 0 00 00 00 00',
-          helpText: 'Incluez le code pays FR +33 avant le numéro de téléphone',
-        },
-        {
-          countryCode: 'ES',
-          placeholder: '+34 000 000 000',
-          helpText: 'Incluya el código de país ES +34 antes del número de teléfono',
-        },
-        {
-          countryCode: 'NL',
-          placeholder: '+31 0 00000000',
-          helpText: 'Voeg de NL-landcode +31 toe vóór het telefoonnummer',
-        },
-        {
-          countryCode: 'BE',
-          placeholder: '+32 000 00 00 00',
-          helpText: 'Incluez le code pays BE +32 avant le numéro de téléphone',
-        },
-        {
-          countryCode: 'CH',
-          placeholder: '+41 00 000 00 00',
-          helpText: 'Fügen Sie vor der Telefonnummer die CH-Ländervorwahl +41 ein',
-        },
-        {
-          countryCode: 'AT',
-          placeholder: '+43 000 000 0000',
-          helpText: 'Fügen Sie vor der Telefonnummer die AT-Ländervorwahl +43 ein',
-        },
-        {
-          countryCode: 'IE',
-          placeholder: '+353 00 000 0000',
-          helpText: 'Include the IE country code +353 before the phone number',
-        },
-        {
-          countryCode: 'IT',
-          placeholder: '+39 000 000 0000',
-          helpText: 'Includere il prefisso internazionale IT +39 prima del numero di telefono',
-        },
-        {
-          countryCode: 'NO',
-          placeholder: '+47 000 00 000',
-          helpText: 'Inkluder NO landskode +47 før telefonnummeret',
-        },
-        {
-          countryCode: 'SE',
-          placeholder: '+46 00 000 00 00',
-          helpText: 'Inkludera SE landskod +46 före telefonnumret',
-        },
-        {
-          countryCode: 'DK',
-          placeholder: '+45 00 00 00 00',
-          helpText: 'Inkluder DK landekode +45 før telefonnummeret',
-        },
-        {
-          countryCode: 'FI',
-          placeholder: '+358 00 000 0000',
-          helpText: 'Sisällytä FI-maakoodi +358 ennen puhelinnumeroa',
-        },
-        {
-          countryCode: 'EE',
-          placeholder: '+372 0000 0000',
-          helpText: 'Lisage EE riigikood +372 telefoninumbri ette',
-        },
-        {
-          countryCode: 'PL',
-          placeholder: '+48 000 000 000',
-          helpText: 'Podaj numer kierunkowy PL +48 przed numerem telefonu',
-        },
-        {
-          countryCode: 'SK',
-          placeholder: '+421 000 000 000',
-          helpText: 'Pred telefónne číslo uveďte kód krajiny SK +421',
-        },
-        {
-          countryCode: 'LV',
-          placeholder: '+371 0000 0000',
-          helpText: 'Iekļaujiet LV valsts kodu +371 pirms tālruņa numura',
-        },
-        {
-          countryCode: 'LT',
-          placeholder: '+370 0000 0000',
-          helpText: 'Įtraukite LT šalies kodą +370 prieš telefono numerį',
-        },
-        {
-          countryCode: 'GR',
-          placeholder: '+30 000 000 0000',
-          helpText: 'Συμπεριλάβετε τον κωδικό χώρας GR +30 πριν από τον αριθμό τηλεφώνου',
-        },
-        {
-          countryCode: 'PT',
-          placeholder: '+351 000 000 000',
-          helpText: 'Inclua o código de país PT +351 antes do número de telefone',
-        },
-        {
-          countryCode: 'HR',
-          placeholder: '+385 00 000 0000',
-          helpText: 'Uključite HR pozivni broj države +385 prije telefonskog broja',
-        },
-        {
-          countryCode: 'SI',
-          placeholder: '+386 00 000 000',
-          helpText: 'Vključite SI kodo države +386 pred telefonsko številko',
-        },
-        {
-          countryCode: 'IS',
-          placeholder: '+354 000 0000',
-          helpText: 'Láttu IS landsnúmer +354 fylgja á undan símanúmerinu',
-        },
-        {
-          countryCode: 'LU',
-          placeholder: '+352 000 000 000',
-          helpText: 'Incluez le code pays LU +352 avant le numéro de téléphone',
-        },
-        {
-          countryCode: 'MC',
-          placeholder: '+377 00 00 00 00',
-          helpText: 'Incluez le code pays MC +377 avant le numéro de téléphone',
-        },
-        {
-          countryCode: 'AD',
-          placeholder: '+376 000 000',
-          helpText: 'Incloeu el codi de país AD +376 abans del número de telèfon',
-        },
-        {
-          countryCode: 'JE',
-          placeholder: '+44 0000 000000',
-          helpText: 'Include the JE country code +44 before the phone number',
-        },
-        {
-          countryCode: 'IM',
-          placeholder: '+44 0000 000000',
-          helpText: 'Include the IM country code +44 before the phone number',
-        },
-        {
-          countryCode: 'GG',
-          placeholder: '+44 0000 000000',
-          helpText: 'Include the GG country code +44 before the phone number',
-        },
-        {
-          countryCode: 'AL',
-          placeholder: '+355 00 000 0000',
-          helpText: 'Përfshini kodin e vendit AL +355 para numrit të telefonit',
-        },
-        {
-          countryCode: 'SM',
-          placeholder: '+378 0000 000000',
-          helpText: 'Includere il prefisso internazionale SM +378 prima del numero di telefono',
-        },
-        {
-          countryCode: 'FO',
-          placeholder: '+298 000000',
-          helpText: 'Inkluder FO landekode +298 før telefonnummeret',
-        },
-        {
-          countryCode: 'MT',
-          placeholder: '+356 0000 0000',
-          helpText: 'Include the MT country code +356 before the phone number',
-        },
-        {
-          countryCode: 'LI',
-          placeholder: '+423 000 0000',
-          helpText: 'Fügen Sie vor der Telefonnummer die LI-Ländervorwahl +423 ein',
-        },
-        {
-          countryCode: 'GI',
-          placeholder: '+350 000 00000',
-          helpText: 'Include the GI country code +350 before the phone number',
-        },
-        {
-          countryCode: 'MD',
-          placeholder: '+373 00 000 000',
-          helpText: 'Includeți codul de țară MD +373 înaintea numărului de telefon',
-        },
-        {
-          countryCode: 'HU',
-          placeholder: '+36 00 000 0000',
-          helpText: 'A telefonszám előtt adja meg a HU országkódot +36',
-        },
-        {
-          countryCode: 'NZ',
-          placeholder: '+64 00 000 0000',
-          helpText: 'Include the NZ country code +64 before the phone number',
-        },
-        {
-          countryCode: 'ME',
-          placeholder: '+382 00 000 000',
-          helpText: 'Uključite ME pozivni broj države +382 prije telefonskog broja',
-        },
-      ];
-      
-      if (!countryCode || typeof countryCode !== 'string') {
-        return mockPlaceholders[0].helpText;
-      }
-      
-      const selectedHelpText = mockPlaceholders.find(function(item) {
-          return item && item.countryCode === countryCode;
-        });
-        
-        return selectedHelpText ? selectedHelpText.helpText : mockPlaceholders[0].helpText;
-    }
-
-    function setDefaultHelpText(countryCode) {
-      const helpTextSpan = document.querySelector('#help-text');
-      if (!helpTextSpan) {
-        return;
-      }
-
-        
-    }
-
-    function updateHelpTextCountryCode(countryCode, fieldName) {
-      if (!countryCode || !fieldName) {
-        return;
-      }
-      
-      setDefaultHelpText(countryCode);
-    }
-
-    function initializeSmsPhoneDropdown(fieldName) {
-      if (!fieldName || typeof fieldName !== 'string') {
-        return;
-      }
-      
-      const dropdown = document.querySelector('#country-select-' + fieldName);
-      const displayFlag = document.querySelector('#flag-display-' + fieldName);
-      
-      if (!dropdown || !displayFlag) {
-        return;
-      }
-
-      const smsPhoneData = window.MC?.smsPhoneData;
-      if (smsPhoneData && smsPhoneData.programs && Array.isArray(smsPhoneData.programs)) {
-        dropdown.innerHTML = generateDropdownOptions(smsPhoneData.programs);
-      }
-
-      const defaultProgram = getDefaultCountryProgram(smsPhoneData?.defaultCountryCode, smsPhoneData?.programs);
-      if (defaultProgram && defaultProgram.countryCode) {
-        dropdown.value = defaultProgram.countryCode;
-        
-        const flagSpan = displayFlag?.querySelector('#flag-emoji-' + fieldName);
-        if (flagSpan) {
-          flagSpan.textContent = getCountryUnicodeFlag(defaultProgram.countryCode);
-          flagSpan.setAttribute('aria-label', sanitizeHtml(defaultProgram.countryCode) + ' flag');
-        }
-        
-        updateSmsLegalText(defaultProgram.countryCode, fieldName);
-        updatePlaceholder(defaultProgram.countryCode, fieldName);
-        updateCountryCodeInstruction(defaultProgram.countryCode, fieldName);
-      }
-
-     
-      var smsNotRequiredRemoveCountryCodeEnabled = true;
-      var smsField = Object.values({"EMAIL":{"name":"EMAIL","label":"Email Address","helper_text":"","merge_id":0,"type":"email","required":true,"audience_field_name":"Email Address","field_type":"merge","enabled":true,"order":0},"FNAME":{"name":"FNAME","label":"First Name","helper_text":"","type":"text","required":false,"audience_field_name":"First Name","enabled":true,"order":1,"field_type":"merge","merge_id":1},"LNAME":{"name":"LNAME","label":"Last Name","helper_text":"","type":"text","required":false,"audience_field_name":"Last Name","enabled":true,"order":2,"field_type":"merge","merge_id":2},"ADDRESS":{"name":"ADDRESS","label":"Address","helper_text":"","type":"address","required":false,"audience_field_name":"Address","enabled":false,"order":null,"field_type":"merge","merge_id":3,"countries":{"2":"Albania","3":"Algeria","4":"Andorra","5":"Angola","6":"Argentina","7":"Armenia","8":"Australia","9":"Austria","10":"Azerbaijan","11":"Bahamas","12":"Bahrain","13":"Bangladesh","14":"Barbados","15":"Belarus","16":"Belgium","17":"Belize","18":"Benin","19":"Bermuda","20":"Bhutan","21":"Bolivia","22":"Bosnia and Herzegovina","23":"Botswana","24":"Brazil","25":"Bulgaria","26":"Burkina Faso","27":"Burundi","28":"Cambodia","29":"Cameroon","30":"Canada","31":"Cape Verde","32":"Cayman Islands","33":"Central African Republic","34":"Chad","35":"Chile","36":"China","37":"Colombia","38":"Congo","40":"Croatia","41":"Cyprus","42":"Czech Republic","43":"Denmark","44":"Djibouti","45":"Ecuador","46":"Egypt","47":"El Salvador","48":"Equatorial Guinea","49":"Eritrea","50":"Estonia","51":"Ethiopia","52":"Fiji","53":"Finland","54":"France","56":"Gabon","57":"Gambia","58":"Georgia","59":"Germany","60":"Ghana","61":"Greece","63":"Guinea","64":"Guinea-Bissau","65":"Guyana","66":"Honduras","67":"Hong Kong","68":"Hungary","69":"Iceland","70":"India","71":"Indonesia","74":"Ireland","75":"Israel","76":"Italy","78":"Japan","79":"Jordan","80":"Kazakhstan","81":"Kenya","82":"Kuwait","83":"Kyrgyzstan","84":"Lao People's Democratic Republic","85":"Latvia","86":"Lebanon","87":"Lesotho","88":"Liberia","90":"Liechtenstein","91":"Lithuania","92":"Luxembourg","93":"Macedonia","94":"Madagascar","95":"Malawi","96":"Malaysia","97":"Maldives","98":"Mali","99":"Malta","100":"Mauritania","101":"Mexico","102":"Moldova","103":"Monaco","104":"Mongolia","105":"Morocco","106":"Mozambique","107":"Namibia","108":"Nepal","109":"Netherlands","110":"Netherlands Antilles","111":"New Zealand","112":"Nicaragua","113":"Niger","114":"Nigeria","116":"Norway","117":"Oman","118":"Pakistan","119":"Panama","120":"Paraguay","121":"Peru","122":"Philippines","123":"Poland","124":"Portugal","126":"Qatar","127":"Reunion","128":"Romania","129":"Russia","130":"Rwanda","132":"Samoa (Independent)","133":"Saudi Arabia","134":"Senegal","135":"Seychelles","136":"Sierra Leone","137":"Singapore","138":"Slovakia","139":"Slovenia","140":"Somalia","141":"South Africa","142":"South Korea","143":"Spain","144":"Sri Lanka","146":"Suriname","147":"Swaziland","148":"Sweden","149":"Switzerland","152":"Taiwan","153":"Tanzania","154":"Thailand","155":"Togo","156":"Tunisia","157":"Turkiye","158":"Turkmenistan","159":"Uganda","161":"Ukraine","162":"United Arab Emirates","163":"Uruguay","164":"USA","165":"Uzbekistan","166":"Vatican City State (Holy See)","167":"Venezuela","168":"Vietnam","169":"Virgin Islands (British)","170":"Yemen","173":"Zambia","174":"Zimbabwe","175":"Antigua And Barbuda","176":"Anguilla","179":"Aruba","180":"Brunei Darussalam","181":"Bouvet Island","183":"Cook Islands","185":"Christmas Island","187":"Dominican Republic","188":"Western Sahara","189":"Falkland Islands","191":"Faroe Islands","192":"Grenada","193":"French Guiana","194":"Gibraltar","195":"Greenland","196":"Guadeloupe","198":"Guatemala","200":"Haiti","202":"Jamaica","203":"Kiribati","204":"Comoros","205":"Saint Kitts and Nevis","206":"Saint Lucia","207":"Marshall Islands","208":"Macau","210":"Martinique","212":"Mauritius","213":"New Caledonia","214":"Norfolk Island","215":"Nauru","217":"Niue","219":"Papua New Guinea","221":"Pitcairn","222":"Palau","223":"Solomon Islands","225":"Svalbard and Jan Mayen Islands","227":"San Marino","232":"Tonga","233":"Timor-Leste","234":"Trinidad and Tobago","235":"Tuvalu","237":"Saint Vincent and the Grenadines","239":"Vanuatu","241":"Mayotte","242":"Myanmar","255":"Sao Tome and Principe","257":"South Georgia and the South Sandwich Islands","260":"Tajikistan","262":"United Kingdom","268":"Costa Rica","270":"Guernsey","272":"North Korea","274":"Afghanistan","275":"Cote D'Ivoire","276":"Cuba","277":"French Polynesia","278":"Iran","279":"Iraq","281":"Libya","282":"Palestine","285":"Syria","286":"Aaland Islands","287":"Turks & Caicos Islands","288":"Jersey  (Channel Islands)","289":"Dominica","290":"Montenegro","293":"Sudan","294":"Montserrat","298":"Curacao","302":"Sint Maarten","311":"South Sudan","315":"Republic of Kosovo","318":"Congo, Democratic Republic of the","323":"Isle of Man","324":"Saint Martin","325":"Bonaire, Saint Eustatius and Saba","326":"Serbia","327":"Saint Barthelemy"},"defaultcountry":164},"PHONE":{"name":"PHONE","label":"Phone Number","helper_text":"","type":"phone","required":false,"audience_field_name":"Phone Number","phoneformat":"","enabled":false,"order":null,"field_type":"merge","merge_id":4},"BIRTHDAY":{"name":"BIRTHDAY","label":"Birthday","helper_text":"","type":"birthday","required":false,"audience_field_name":"Birthday","dateformat":"MM/DD","enabled":false,"order":null,"field_type":"merge","merge_id":5},"COMPANY":{"name":"COMPANY","label":"Company","helper_text":"","type":"text","required":false,"audience_field_name":"Company","enabled":false,"order":null,"field_type":"merge","merge_id":6}}).find(function(f) { return f.name === fieldName && f.type === 'smsphone'; });
-      var isRequired = smsField ? smsField.required : false;
-      var shouldAppendCountryCode = smsNotRequiredRemoveCountryCodeEnabled ? isRequired : true;
-      
-      var phoneInput = document.querySelector('#mce-' + fieldName);
-      if (phoneInput && defaultProgram.countryCallingCode && shouldAppendCountryCode) {
-        phoneInput.value = defaultProgram.countryCallingCode;
-      }
-      
+        </section>
 
 
-      displayFlag?.addEventListener('click', function(e) {
-        dropdown.focus();
-      });
+        <!-- ART -->
+        <section id="art" class="bg-white py-16">
+
+            <div class="max-w-4xl mx-auto px-6 pb-4">
+                <h2 class="text-3xl font-ovo text-red-500 tracking-wide">
+                    Art
+                </h2>
+            </div>
+
+            <div class="max-w-4xl mx-auto px-6 py-4">
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+
+                    <!-- Traditional -->
+                    <button
+                        type="button"
+                        onclick="showPage('traditional')"
+                        class="text-left space-y-4 cursor-pointer group focus:outline-none"
+                    >
+                        <div class="overflow-hidden rounded-sm shadow-sm bg-gray-50">
+
+                            <img
+                                src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Traditional"
+                                alt="Traditional art"
+                                class="w-full h-64 object-cover animate-slow-fade transform group-hover:scale-105 transition-transform duration-500"
+                            >
+
+                        </div>
+
+                        <h3 class="font-semibold text-gray-600 group-hover:text-red-500 transition-colors">
+                            Traditional
+                        </h3>
+                    </button>
 
 
-      dropdown?.addEventListener('change', function() {
-        const selectedCountry = this.value;
-        
-        if (!selectedCountry || typeof selectedCountry !== 'string') {
-          return;
-        }
-        
-        const flagSpan = displayFlag?.querySelector('#flag-emoji-' + fieldName);
-        if (flagSpan) {
-          flagSpan.textContent = getCountryUnicodeFlag(selectedCountry);
-          flagSpan.setAttribute('aria-label', sanitizeHtml(selectedCountry) + ' flag');
-        }
+                    <!-- Sketches -->
+                    <button
+                        type="button"
+                        onclick="showPage('sketches')"
+                        class="text-left space-y-4 cursor-pointer group focus:outline-none"
+                    >
+                        <div class="overflow-hidden rounded-sm shadow-sm bg-gray-50">
 
-         
-        const selectedProgram = window.MC?.smsPhoneData?.programs.find(function(program) {
-          return program && program.countryCode === selectedCountry;
-        });
+                            <img
+                                src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Sketches"
+                                alt="Sketches"
+                                class="w-full h-64 object-cover animate-slow-fade transform group-hover:scale-105 transition-transform duration-500"
+                            >
 
-        var smsNotRequiredRemoveCountryCodeEnabled = true;
-        var smsField = Object.values({"EMAIL":{"name":"EMAIL","label":"Email Address","helper_text":"","merge_id":0,"type":"email","required":true,"audience_field_name":"Email Address","field_type":"merge","enabled":true,"order":0},"FNAME":{"name":"FNAME","label":"First Name","helper_text":"","type":"text","required":false,"audience_field_name":"First Name","enabled":true,"order":1,"field_type":"merge","merge_id":1},"LNAME":{"name":"LNAME","label":"Last Name","helper_text":"","type":"text","required":false,"audience_field_name":"Last Name","enabled":true,"order":2,"field_type":"merge","merge_id":2},"ADDRESS":{"name":"ADDRESS","label":"Address","helper_text":"","type":"address","required":false,"audience_field_name":"Address","enabled":false,"order":null,"field_type":"merge","merge_id":3,"countries":{"2":"Albania","3":"Algeria","4":"Andorra","5":"Angola","6":"Argentina","7":"Armenia","8":"Australia","9":"Austria","10":"Azerbaijan","11":"Bahamas","12":"Bahrain","13":"Bangladesh","14":"Barbados","15":"Belarus","16":"Belgium","17":"Belize","18":"Benin","19":"Bermuda","20":"Bhutan","21":"Bolivia","22":"Bosnia and Herzegovina","23":"Botswana","24":"Brazil","25":"Bulgaria","26":"Burkina Faso","27":"Burundi","28":"Cambodia","29":"Cameroon","30":"Canada","31":"Cape Verde","32":"Cayman Islands","33":"Central African Republic","34":"Chad","35":"Chile","36":"China","37":"Colombia","38":"Congo","40":"Croatia","41":"Cyprus","42":"Czech Republic","43":"Denmark","44":"Djibouti","45":"Ecuador","46":"Egypt","47":"El Salvador","48":"Equatorial Guinea","49":"Eritrea","50":"Estonia","51":"Ethiopia","52":"Fiji","53":"Finland","54":"France","56":"Gabon","57":"Gambia","58":"Georgia","59":"Germany","60":"Ghana","61":"Greece","63":"Guinea","64":"Guinea-Bissau","65":"Guyana","66":"Honduras","67":"Hong Kong","68":"Hungary","69":"Iceland","70":"India","71":"Indonesia","74":"Ireland","75":"Israel","76":"Italy","78":"Japan","79":"Jordan","80":"Kazakhstan","81":"Kenya","82":"Kuwait","83":"Kyrgyzstan","84":"Lao People's Democratic Republic","85":"Latvia","86":"Lebanon","87":"Lesotho","88":"Liberia","90":"Liechtenstein","91":"Lithuania","92":"Luxembourg","93":"Macedonia","94":"Madagascar","95":"Malawi","96":"Malaysia","97":"Maldives","98":"Mali","99":"Malta","100":"Mauritania","101":"Mexico","102":"Moldova","103":"Monaco","104":"Mongolia","105":"Morocco","106":"Mozambique","107":"Namibia","108":"Nepal","109":"Netherlands","110":"Netherlands Antilles","111":"New Zealand","112":"Nicaragua","113":"Niger","114":"Nigeria","116":"Norway","117":"Oman","118":"Pakistan","119":"Panama","120":"Paraguay","121":"Peru","122":"Philippines","123":"Poland","124":"Portugal","126":"Qatar","127":"Reunion","128":"Romania","129":"Russia","130":"Rwanda","132":"Samoa (Independent)","133":"Saudi Arabia","134":"Senegal","135":"Seychelles","136":"Sierra Leone","137":"Singapore","138":"Slovakia","139":"Slovenia","140":"Somalia","141":"South Africa","142":"South Korea","143":"Spain","144":"Sri Lanka","146":"Suriname","147":"Swaziland","148":"Sweden","149":"Switzerland","152":"Taiwan","153":"Tanzania","154":"Thailand","155":"Togo","156":"Tunisia","157":"Turkiye","158":"Turkmenistan","159":"Uganda","161":"Ukraine","162":"United Arab Emirates","163":"Uruguay","164":"USA","165":"Uzbekistan","166":"Vatican City State (Holy See)","167":"Venezuela","168":"Vietnam","169":"Virgin Islands (British)","170":"Yemen","173":"Zambia","174":"Zimbabwe","175":"Antigua And Barbuda","176":"Anguilla","179":"Aruba","180":"Brunei Darussalam","181":"Bouvet Island","183":"Cook Islands","185":"Christmas Island","187":"Dominican Republic","188":"Western Sahara","189":"Falkland Islands","191":"Faroe Islands","192":"Grenada","193":"French Guiana","194":"Gibraltar","195":"Greenland","196":"Guadeloupe","198":"Guatemala","200":"Haiti","202":"Jamaica","203":"Kiribati","204":"Comoros","205":"Saint Kitts and Nevis","206":"Saint Lucia","207":"Marshall Islands","208":"Macau","210":"Martinique","212":"Mauritius","213":"New Caledonia","214":"Norfolk Island","215":"Nauru","217":"Niue","219":"Papua New Guinea","221":"Pitcairn","222":"Palau","223":"Solomon Islands","225":"Svalbard and Jan Mayen Islands","227":"San Marino","232":"Tonga","233":"Timor-Leste","234":"Trinidad and Tobago","235":"Tuvalu","237":"Saint Vincent and the Grenadines","239":"Vanuatu","241":"Mayotte","242":"Myanmar","255":"Sao Tome and Principe","257":"South Georgia and the South Sandwich Islands","260":"Tajikistan","262":"United Kingdom","268":"Costa Rica","270":"Guernsey","272":"North Korea","274":"Afghanistan","275":"Cote D'Ivoire","276":"Cuba","277":"French Polynesia","278":"Iran","279":"Iraq","281":"Libya","282":"Palestine","285":"Syria","286":"Aaland Islands","287":"Turks & Caicos Islands","288":"Jersey  (Channel Islands)","289":"Dominica","290":"Montenegro","293":"Sudan","294":"Montserrat","298":"Curacao","302":"Sint Maarten","311":"South Sudan","315":"Republic of Kosovo","318":"Congo, Democratic Republic of the","323":"Isle of Man","324":"Saint Martin","325":"Bonaire, Saint Eustatius and Saba","326":"Serbia","327":"Saint Barthelemy"},"defaultcountry":164},"PHONE":{"name":"PHONE","label":"Phone Number","helper_text":"","type":"phone","required":false,"audience_field_name":"Phone Number","phoneformat":"","enabled":false,"order":null,"field_type":"merge","merge_id":4},"BIRTHDAY":{"name":"BIRTHDAY","label":"Birthday","helper_text":"","type":"birthday","required":false,"audience_field_name":"Birthday","dateformat":"MM/DD","enabled":false,"order":null,"field_type":"merge","merge_id":5},"COMPANY":{"name":"COMPANY","label":"Company","helper_text":"","type":"text","required":false,"audience_field_name":"Company","enabled":false,"order":null,"field_type":"merge","merge_id":6}}).find(function(f) { return f.name === fieldName && f.type === 'smsphone'; });
-        var isRequired = smsField ? smsField.required : false;
-        var shouldAppendCountryCode = smsNotRequiredRemoveCountryCodeEnabled ? isRequired : true;
-        
-        var phoneInput = document.querySelector('#mce-' + fieldName);
-        if (phoneInput && selectedProgram.countryCallingCode && shouldAppendCountryCode) {
-          phoneInput.value = selectedProgram.countryCallingCode;
-        }
-        
-        
-        updateSmsLegalText(selectedCountry, fieldName);
-        updatePlaceholder(selectedCountry, fieldName);
-        updateCountryCodeInstruction(selectedCountry, fieldName);
-      });
-    }
+                        </div>
 
-    document.addEventListener('DOMContentLoaded', function() {
-      const smsPhoneFields = document.querySelectorAll('[id^="country-select-"]');
-      
-      smsPhoneFields.forEach(function(dropdown) {
-        const fieldName = dropdown?.id.replace('country-select-', '');
-        initializeSmsPhoneDropdown(fieldName);
-      });
-    });
-    </script></div>
+                        <h3 class="font-semibold text-gray-600 group-hover:text-red-500 transition-colors">
+                            Sketches
+                        </h3>
+                    </button>
 
 
+                    <!-- Digital -->
+                    <button
+                        type="button"
+                        onclick="showPage('digital')"
+                        class="text-left space-y-4 cursor-pointer group focus:outline-none"
+                    >
+                        <div class="overflow-hidden rounded-sm shadow-sm bg-gray-50">
+
+                            <img
+                                src="https://placehold.co/600x400/f3f4f6/a3a3a3?text=Digital"
+                                alt="Digital art"
+                                class="w-full h-64 object-cover animate-slow-fade transform group-hover:scale-105 transition-transform duration-500"
+                            >
+
+                        </div>
+
+                        <h3 class="font-semibold text-gray-600 group-hover:text-red-500 transition-colors">
+                            Digital
+                        </h3>
+                    </button>
+
+                </div>
 
 
-        <!-- Traditional Art Page -->
-        <div id="page-traditional" class="hidden max-w-4xl mx-auto px-6 py-20 animate-fade-in">
-            <button onclick="showPage('home', '#art')" class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors">← Back to Art</button>
-            <h2 class="text-4xl font-ovo font-bold mb-6 text-red-500">Traditional Art</h2>
-            <p class="text-gray-500 mb-8">A collection of physical works, oils, and mixed media pieces.</p>
-            <img src="https://placehold.co/900x500/f3f4f6/a3a3a3?text=Traditional+Works+Gallery" class="w-full mb-6 shadow-sm animate-slow-fade" alt="Traditional Works">
-        </div>
+                <a
+                    href="https://www.etsy.com/shop/lailasabzi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-block px-6 py-3 bg-red-50 text-red-600 font-semibold text-sm rounded-sm hover:bg-red-100 transform hover:-translate-y-0.5 transition-all shadow-sm"
+                >
+                    Visit Etsy Shop (Restock is in the works!)
+                </a>
 
-        <!-- Sketches Page -->
-        <div id="page-sketches" class="hidden max-w-4xl mx-auto px-6 py-20 animate-fade-in">
-            <button onclick="showPage('home', '#art')" class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors">← Back to Art</button>
-            <h2 class="text-4xl font-ovo font-bold mb-6 text-red-500">Sketches & Studies</h2>
-            <p class="text-gray-500 mb-8">Charcoal, graphite, and exploratory ink studies capturing raw expressions.</p>
-            <img src="https://placehold.co/900x500/f3f4f6/a3a3a3?text=Sketches+Gallery" class="w-full mb-6 shadow-sm animate-slow-fade" alt="Sketches">
-        </div>
+            </div>
+        </section>
 
-        <!-- Digital Art Page -->
-        <div id="page-digital" class="hidden max-w-4xl mx-auto px-6 py-20 animate-fade-in">
-            <button onclick="showPage('home', '#art')" class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors">← Back to Art</button>
-            <h2 class="text-4xl font-ovo font-bold mb-6 text-red-500">Digital Art</h2>
-            <p class="text-gray-500 mb-8">Digital illustrations, scans, and graphic works.</p>
-            <img src="https://placehold.co/900x500/f3f4f6/a3a3a3?text=Digital+Art+Gallery" class="w-full mb-6 shadow-sm animate-slow-fade" alt="Digital Art">
-        </div>
+
+        <!-- ACTING -->
+        <section
+            id="acting"
+            class="bg-gray-50/70 py-16 border-y border-gray-100"
+        >
+
+            <div class="max-w-4xl mx-auto px-6 pb-4">
+
+                <h2 class="text-3xl font-ovo text-green-500 tracking-wide">
+                    Acting
+                </h2>
+
+            </div>
+
+
+            <div class="max-w-4xl mx-auto px-6 py-4">
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+
+                    <div class="p-6 bg-white border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md">
+                        <h3 class="font-semibold text-gray-600">
+                            Skin Deep
+                        </h3>
+                        <p class="text-sm mt-1">
+                            Bartender | 2026
+                        </p>
+                    </div>
+
+                    <div class="p-6 bg-white border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md">
+                        <h3 class="font-semibold text-gray-600">
+                            Say No!
+                        </h3>
+                        <p class="text-sm mt-1">
+                            Court Artist | 2025
+                        </p>
+                    </div>
+
+                    <div class="p-6 bg-white border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md">
+                        <h3 class="font-semibold text-gray-600">
+                            Doodhpatti
+                        </h3>
+                        <p class="text-sm mt-1">
+                            Noor | 2021
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="https://www.imdb.com/name/nm16391435/?ref_=ext_shr_lnk"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-block px-6 py-3 bg-green-50 text-green-600 font-semibold text-sm rounded-sm hover:bg-green-100 transform hover:-translate-y-0.5 transition-all shadow-sm"
+                >
+                    View IMDb Profile →
+                </a>
+
+            </div>
+        </section>
+
+
+        <!-- ABOUT -->
+        <section id="about" class="bg-white py-16">
+
+            <div class="max-w-4xl mx-auto px-6 pb-4">
+
+                <h2 class="text-3xl font-ovo text-purple-500 tracking-wide">
+                    About
+                </h2>
+
+            </div>
+
+
+            <div class="max-w-4xl mx-auto px-6 py-4">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-stretch">
+
+                    <div class="flex flex-col justify-center">
+
+                        <p class="text-base leading-relaxed text-justify hyphens-auto">
+
+                            Saba is a multidisciplinary artist originally from Pakistan who has been based in Paris for over a decade. During her formative years in Hong Kong, she completely immersed herself in the arts—playing musical instruments, singing in choirs, and acting in theatrical productions. A lifelong creative, Saba has been painting and drawing since childhood. Her early fascination with performance was sparked by annual school plays, where she took on diverse roles ranging from a Troll to Felicity Morgan in Robert Swindells' Room 13, cementing her lifelong passion for acting.
+
+                            <br><br>
+
+                            Holding a Bachelor’s degree in Graphic Design (majoring in UX/UI) from LISAA Paris and a diverse professional background, she continually pushes her artistic boundaries through filmmaking and poetry. She remains dedicated to painting and sketching, specialising in emotive portraits that capture frequently stigmatised or "shunned" emotions.
+
+                        </p>
+
+                    </div>
+
+
+                    <div class="relative w-full h-full min-h-[300px] overflow-hidden group">
+
+                        <img
+                            src="about.jpg"
+                            alt="About Saba Yaqoob"
+                            class="w-full h-full object-contain animate-slow-fade transform group-hover:scale-105 transition-transform duration-700 shadow-sm"
+                            onerror="this.src='https://placehold.co/400x500/f3f4f6/a3a3a3?text=Saba+Yaqoob'"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- CONTACT -->
+        <section
+            id="contact"
+            class="bg-gray-50/70 py-16 border-t border-gray-100"
+        >
+
+            <div class="max-w-4xl mx-auto px-6 pb-4">
+
+                <h2 class="text-3xl font-ovo text-blue-500 tracking-wide">
+                    Contact
+                </h2>
+
+            </div>
+
+
+            <div class="max-w-4xl mx-auto px-6 py-4 space-y-12">
+
+                <!-- Email -->
+                <div>
+
+                    <p class="text-lg">
+
+                        For queries or collaborations, email at
+
+                        <a
+                            href="mailto:heysabawhy@gmail.com"
+                            class="text-blue-500 underline hover:opacity-75 transition-opacity"
+                        >
+                            heysabawhy@gmail.com
+                        </a>.
+
+                    </p>
+
+                </div>
+
+
+                <!-- MAILCHIMP -->
+                <div id="mc_embed_shell">
+
+                    <div id="mc_embed_signup">
+
+                        <form
+                            action="https://gmail.us20.list-manage.com/subscribe/post?u=97f0ae89cf3c18a9c17b3ff28&amp;id=931c785ead&amp;f_id=001e76eef0"
+                            method="post"
+                            id="mc-embedded-subscribe-form"
+                            name="mc-embedded-subscribe-form"
+                            class="validate"
+                            target="_blank"
+                        >
+
+                            <div id="mc_embed_signup_scroll">
+
+                                <h2>
+                                    Sign up for updates :)
+                                </h2>
+
+                                <p class="text-sm text-gray-500 mb-6">
+                                    We respect your privacy.
+                                </p>
+
+
+                                <!-- Email -->
+                                <div class="mc-field-group">
+
+                                    <label for="mce-EMAIL">
+                                        Email Address
+                                        <span class="asterisk">*</span>
+                                    </label>
+
+                                    <input
+                                        type="email"
+                                        name="EMAIL"
+                                        class="required email"
+                                        id="mce-EMAIL"
+                                        required
+                                        value=""
+                                        autocomplete="email"
+                                    >
+
+                                </div>
+
+
+                                <!-- First Name -->
+                                <div class="mc-field-group">
+
+                                    <label for="mce-FNAME">
+                                        First Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        name="FNAME"
+                                        class="text"
+                                        id="mce-FNAME"
+                                        value=""
+                                        autocomplete="given-name"
+                                    >
+
+                                </div>
+
+
+                                <!-- Last Name -->
+                                <div class="mc-field-group">
+
+                                    <label for="mce-LNAME">
+                                        Last Name
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        name="LNAME"
+                                        class="text"
+                                        id="mce-LNAME"
+                                        value=""
+                                        autocomplete="family-name"
+                                    >
+
+                                </div>
+
+
+                                <!-- Responses -->
+                                <div id="mce-responses" class="clear foot">
+
+                                    <div
+                                        class="response"
+                                        id="mce-error-response"
+                                        style="display: none;"
+                                    ></div>
+
+                                    <div
+                                        class="response"
+                                        id="mce-success-response"
+                                        style="display: none;"
+                                    ></div>
+
+                                </div>
+
+
+                                <!-- Honeypot -->
+                                <div
+                                    aria-hidden="true"
+                                    style="position: absolute; left: -5000px;"
+                                >
+                                    <input
+                                        type="text"
+                                        name="b_97f0ae89cf3c18a9c17b3ff28_931c785ead"
+                                        tabindex="-1"
+                                        value=""
+                                    >
+                                </div>
+
+
+                                <!-- Submit -->
+                                <div class="optionalParent">
+
+                                    <div class="clear foot">
+
+                                        <input
+                                            type="submit"
+                                            name="subscribe"
+                                            id="mc-embedded-subscribe"
+                                            class="button"
+                                            value="Subscribe"
+                                        >
+
+                                        <p class="mt-4">
+
+                                            <a
+                                                href="http://eepurl.com/ZzrV39Pe6l"
+                                                title="Mailchimp - email marketing made easy and fun"
+                                            >
+                                                <img
+                                                    class="refferal_badge"
+                                                    src="https://digitalasset.intuit.com/render/content/dam/intuit/mc-fe/en_us/images/intuit-mc-rewards-text-dark.svg"
+                                                    alt="Intuit Mailchimp"
+                                                    style="width: 220px; height: 40px; display: inline-block; padding: 2px 0;"
+                                                >
+                                            </a>
+
+                                        </p>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SOCIAL CHANNELS -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm pt-2">
+
+                    <div class="bg-white p-6 border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md">
+
+                        <h4 class="font-semibold text-gray-700 mb-3">
+                            Main Channels
+                        </h4>
+
+                        <div class="flex gap-4 flex-wrap">
+
+                            <a
+                                href="https://www.instagram.com/_sabawhy/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="hover:text-orange-500 transition-colors"
+                            >
+                                Instagram
+                            </a>
+
+                            <a
+                                href="https://www.tiktok.com/@__sabawhy"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="hover:text-orange-500 transition-colors"
+                            >
+                                TikTok
+                            </a>
+
+                            <a
+                                href="https://www.youtube.com/@sabawhy"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="hover:text-orange-500 transition-colors"
+                            >
+                                YouTube
+                            </a>
+
+                            <a
+                                href="https://substack.com/@sabawhy"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="hover:text-orange-500 transition-colors"
+                            >
+                                Substack
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bg-white p-6 border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md">
+
+                        <h4 class="font-semibold text-gray-700 mb-3">
+                            Art Channels
+                        </h4>
+
+                        <div class="flex gap-4 flex-wrap">
+
+                            <a
+                                href="https://www.instagram.com/lailasabzi/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="hover:text-red-500 transition-colors"
+                            >
+                                Instagram
+                            </a>
+
+                            <a
+                                href="https://www.tiktok.com/@lailasabzi"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="hover:text-red-500 transition-colors"
+                            >
+                                TikTok
+                            </a>
+
+                            <a
+                                href="https://www.youtube.com/@lailasabzi"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="hover:text-red-500 transition-colors"
+                            >
+                                YouTube
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
     </div>
 
-    <footer class="py-12 text-center text-gray-400 text-sm border-t border-gray-50 flex flex-col items-center justify-center bg-white">
-        <div class="px-4">
-            &copy; 2026 Saba Yaqoob. All rights reserved.
-        </div>
-        <div class="px-4 mt-1">
-            Photos by Sharyal Zafar.
-        </div>
-    </footer>
 
-    <script>
-        function showPage(pageId, targetHash) {
-            // Hide all page containers
-            document.querySelectorAll('div[id^="page-"]').forEach(div => div.classList.add('hidden'));
-            
-            // Show target page
-            const targetPage = document.getElementById('page-' + pageId);
-            if (targetPage) {
-                targetPage.classList.remove('hidden');
-            }
+    <!-- TRADITIONAL ART PAGE -->
+    <div
+        id="page-traditional"
+        class="hidden max-w-4xl mx-auto px-6 py-20 animate-fade-in"
+    >
 
-            // Close mobile menu if open
-            const menu = document.getElementById('mobileMenu');
-            if (menu && !menu.classList.contains('hidden')) {
-                menu.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }
+        <button
+            onclick="showPage('home', '#art')"
+            class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors"
+        >
+            ← Back to Art
+        </button>
 
-            // Scroll to target hash or top of page
+        <h2 class="text-4xl font-ovo font-bold mb-6 text-red-500">
+            Traditional Art
+        </h2>
+
+        <p class="text-gray-500 mb-8">
+            A collection of physical works, oils, and mixed media pieces.
+        </p>
+
+        <img
+            src="https://placehold.co/900x500/f3f4f6/a3a3a3?text=Traditional+Works+Gallery"
+            class="w-full mb-6 shadow-sm animate-slow-fade"
+            alt="Traditional Works"
+        >
+
+    </div>
+
+
+    <!-- SKETCHES PAGE -->
+    <div
+        id="page-sketches"
+        class="hidden max-w-4xl mx-auto px-6 py-20 animate-fade-in"
+    >
+
+        <button
+            onclick="showPage('home', '#art')"
+            class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors"
+        >
+            ← Back to Art
+        </button>
+
+        <h2 class="text-4xl font-ovo font-bold mb-6 text-red-500">
+            Sketches & Studies
+        </h2>
+
+        <p class="text-gray-500 mb-8">
+            Charcoal, graphite, and exploratory ink studies capturing raw expressions.
+        </p>
+
+        <img
+            src="https://placehold.co/900x500/f3f4f6/a3a3a3?text=Sketches+Gallery"
+            class="w-full mb-6 shadow-sm animate-slow-fade"
+            alt="Sketches"
+        >
+
+    </div>
+
+
+    <!-- DIGITAL ART PAGE -->
+    <div
+        id="page-digital"
+        class="hidden max-w-4xl mx-auto px-6 py-20 animate-fade-in"
+    >
+
+        <button
+            onclick="showPage('home', '#art')"
+            class="mb-8 text-sm font-semibold uppercase hover:text-red-500 transition-colors"
+        >
+            ← Back to Art
+        </button>
+
+        <h2 class="text-4xl font-ovo font-bold mb-6 text-red-500">
+            Digital Art
+        </h2>
+
+        <p class="text-gray-500 mb-8">
+            Digital illustrations, scans, and graphic works.
+        </p>
+
+        <img
+            src="https://placehold.co/900x500/f3f4f6/a3a3a3?text=Digital+Art+Gallery"
+            class="w-full mb-6 shadow-sm animate-slow-fade"
+            alt="Digital Art"
+        >
+
+    </div>
+
+</main>
+
+
+<!-- FOOTER -->
+<footer
+    class="py-12 text-center text-gray-400 text-sm border-t border-gray-50 flex flex-col items-center justify-center bg-white"
+>
+
+    <div class="px-4">
+        &copy; 2026 Saba Yaqoob. All rights reserved.
+    </div>
+
+    <div class="px-4 mt-1">
+        Photos by Sharyal Zafar.
+    </div>
+
+</footer>
+
+
+<!-- JAVASCRIPT -->
+<script>
+    function showPage(pageId, targetHash = null) {
+
+        // Hide all pages
+        document
+            .querySelectorAll('[id^="page-"]')
+            .forEach(page => {
+                page.classList.add('hidden');
+            });
+
+
+        // Show requested page
+        const targetPage = document.getElementById('page-' + pageId);
+
+        if (!targetPage) {
+            console.warn('Page not found:', pageId);
+            return;
+        }
+
+        targetPage.classList.remove('hidden');
+
+
+        // Close mobile menu
+        closeMobileMenu();
+
+
+        // Scroll
+        setTimeout(() => {
+
             if (targetHash) {
-                setTimeout(() => {
-                    const el = document.querySelector(targetHash);
-                    if (el) {
-                        el.scrollIntoView({ behavior: 'smooth' });
-                    } else {
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }
-                }, 50);
-            } else {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                const element = document.querySelector(targetHash);
+
+                if (element) {
+                    element.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+
+                    return;
+                }
+
             }
+
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+
+        }, 50);
+    }
+
+
+    function toggleMenu() {
+
+        const menu = document.getElementById('mobileMenu');
+        const button = document.getElementById('menuButton');
+
+        if (!menu) {
+            return;
         }
 
-        function toggleMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-            if (!menu.classList.contains('hidden')) {
-                document.body.style.overflow = 'hidden';
-            } else {
-                document.body.style.overflow = 'auto';
+        const isOpen = !menu.classList.contains('hidden');
+
+        if (isOpen) {
+            closeMobileMenu();
+        } else {
+
+            menu.classList.remove('hidden');
+            menu.classList.add('flex');
+
+            document.body.classList.add('menu-open');
+
+            if (button) {
+                button.setAttribute('aria-expanded', 'true');
+                button.setAttribute('aria-label', 'Close menu');
+                button.textContent = '×';
             }
         }
-    </script>
+    }
+
+
+    function closeMobileMenu() {
+
+        const menu = document.getElementById('mobileMenu');
+        const button = document.getElementById('menuButton');
+
+        if (menu) {
+            menu.classList.add('hidden');
+            menu.classList.remove('flex');
+        }
+
+        document.body.classList.remove('menu-open');
+
+        if (button) {
+            button.setAttribute('aria-expanded', 'false');
+            button.setAttribute('aria-label', 'Open menu');
+            button.textContent = '☰';
+        }
+    }
+
+
+    function navigateFromMobile(hash) {
+
+        closeMobileMenu();
+
+        showPage('home', hash);
+    }
+
+
+    // Close menu if the browser is resized to desktop
+    window.addEventListener('resize', () => {
+
+        if (window.innerWidth >= 768) {
+            closeMobileMenu();
+        }
+
+    });
+
+
+    // Allow Escape key to close mobile menu
+    document.addEventListener('keydown', event => {
+
+        if (event.key === 'Escape') {
+            closeMobileMenu();
+        }
+
+    });
+</script>
+```
+
 </body>
 </html>
