@@ -23,6 +23,7 @@
             font-family: 'Inter', sans-serif;
             color: #666666;
             background: #ffffff;
+            overflow-x: hidden;
         }
 
         .font-ovo {
@@ -71,145 +72,25 @@
             overflow: hidden;
         }
 
-        /* Mailchimp Form Customizations */
-        #mc_embed_shell {
-            width: 100% !important;
-            max-width: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
+        .full-bleed {
+            width: 100vw;
+            position: relative;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
         }
 
-        #mc_embed_signup {
-            width: 100% !important;
-            max-width: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-            background: transparent !important;
-            clear: both !important;
-            font-family: 'Inter', sans-serif !important;
-            color: #4b5563 !important;
+        @keyframes rainbowShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
-        #mc_embed_signup form {
-            width: 100% !important;
-            max-width: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
-        #mc_embed_signup_scroll {
-            width: 100% !important;
-            max-width: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
-        #mc_embed_signup h2 {
-            margin: 0 0 0.75rem 0 !important;
-            padding: 0 !important;
-            font-family: 'Ovo', serif !important;
-            font-size: 1.875rem !important;
-            font-weight: 400 !important;
-            line-height: 1.3 !important;
-            color: #4b5563 !important;
-        }
-
-        #mc_embed_signup .indicates-required {
-            display: none !important;
-        }
-
-        #mc_embed_signup .mc-field-group {
-            width: 100% !important;
-            max-width: 100% !important;
-            min-height: 0 !important;
-            margin: 0 0 1rem 0 !important;
-            padding: 0 !important;
-            clear: both !important;
-        }
-
-        #mc_embed_signup .mc-field-group label {
-            display: block !important;
-            width: 100% !important;
-            margin: 0 0 0.35rem 0 !important;
-            padding: 0 !important;
-            color: #4b5563 !important;
-            font-family: 'Inter', sans-serif !important;
-            font-size: 0.875rem !important;
-            font-weight: 500 !important;
-            line-height: 1.5 !important;
-        }
-
-        #mc_embed_signup .mc-field-group input {
-            display: block !important;
-            box-sizing: border-box !important;
-            width: 100% !important;
-            max-width: 400px !important;
-            height: auto !important;
-            margin: 0 !important;
-            padding: 0.7rem 0.75rem !important;
-            border: 1px solid #e5e7eb !important;
-            border-radius: 0.25rem !important;
-            background: #ffffff !important;
-            color: #4b5563 !important;
-            font-family: 'Inter', sans-serif !important;
-            font-size: 0.875rem !important;
-            line-height: 1.5 !important;
-            box-shadow: none !important;
-        }
-
-        #mc_embed_signup .mc-field-group input:focus {
-            outline: none !important;
-            border-color: #93c5fd !important;
-            box-shadow: 0 0 0 2px rgba(147, 197, 253, 0.2) !important;
-        }
-
-        #mc_embed_signup .button {
-            display: inline-block !important;
-            width: auto !important;
-            min-width: 0 !important;
-            height: auto !important;
-            min-height: 0 !important;
-            margin: 0 !important;
-            padding: 0.65rem 1.5rem !important;
-            border: none !important;
-            border-radius: 0.25rem !important;
-            background: #3b82f6 !important;
-            color: #ffffff !important;
-            font-family: 'Inter', sans-serif !important;
-            font-size: 0.875rem !important;
-            font-weight: 600 !important;
-            line-height: 1.5 !important;
-            cursor: pointer !important;
-            transition: background-color 0.2s ease, transform 0.2s ease !important;
-        }
-
-        #mc_embed_signup .button:hover {
-            background: #2563eb !important;
-            transform: translateY(-1px);
-        }
-
-        #mc_embed_signup .optionalParent,
-        #mc_embed_signup .foot {
-            width: 100% !important;
-            margin: 0 !important;
-            padding: 0 !important;
-        }
-
-        #mc_embed_signup .response {
-            margin: 1rem 0 !important;
-            padding: 0 !important;
-        }
-
-        #mc_embed_signup .refferal_badge {
-            display: inline-block !important;
-            margin-top: 1rem !important;
-            opacity: 0.65;
-        }
-
-        @media (max-width: 767px) {
-            #mc_embed_signup h2 {
-                font-size: 1.65rem !important;
-            }
+        .animated-rainbow-bg {
+            background: linear-gradient(270deg, rgba(254, 202, 202, 0.5), rgba(254, 240, 138, 0.5), rgba(187, 247, 208, 0.5), rgba(191, 219, 254, 0.5), rgba(233, 213, 255, 0.5));
+            background-size: 400% 400%;
+            animation: rainbowShift 12s ease infinite;
         }
     </style>
 </head>
@@ -359,85 +240,93 @@
                     </div>
 
                     <!-- NEWSLETTER -->
-<div style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;">
-  <iframe src="https://sabawhy.substack.com/embed" height="320" style="width: 100% !important; border: none; background: white;" frameborder="0" scrolling="no"></iframe>
-</div>
-
-                  <!-- SOCIAL MEDIA CHANNELS -->
-    <section class="w-full my-8">
-        <div class="full-bleed bg-gray-200/90 py-8 border-y border-gray-300/60 shadow-inner">
-            <div class="max-w-4xl mx-auto px-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
-                    <!-- Main Channels -->
-                    <div class="bg-white p-6 border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md flex flex-col justify-between">
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-4">Main Channels</h4>
-                            <div class="flex flex-col gap-3">
-                                <!-- Instagram -->
-                                <a href="https://www.instagram.com/_sabawhy/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group hover:text-orange-500 transition-colors">
-                                    <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                                        <circle cx="12" cy="12" r="4"></circle>
-                                        <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none"></circle>
-                                    </svg>
-                                    <span>Instagram</span>
-                                </a>
-                                <!-- TikTok -->
-                                <a href="https://www.tiktok.com/@__sabawhy" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group hover:text-orange-500 transition-colors">
-                                    <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                        <path d="M16.6 3c.3 1.8 1.4 3.3 3.1 4.1.5.2 1 .4 1.6.4v3.1c-1.5 0-2.9-.4-4.1-1.1v6.8c0 4.1-3.3 6.7-6.7 6.7-3.1 0-5.7-2.5-5.7-5.7 0-3.4 2.8-5.8 6.2-5.8.3 0 .7 0 1 .1v3.2c-.3-.1-.6-.2-1-.2-1.6 0-2.9 1.1-2.9 2.7 0 1.5 1.1 2.7 2.7 2.7 1.8 0 2.9-1.2 2.9-3.5V3h2.9z"/>
-                                    </svg>
-                                    <span>TikTok</span>
-                                </a>
-                                <!-- YouTube -->
-                                <a href="https://www.youtube.com/@sabawhy" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group hover:text-orange-500 transition-colors">
-                                    <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                                    </svg>
-                                    <span>YouTube</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Art Channels -->
-                    <div class="bg-white p-6 border border-gray-100 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md flex flex-col justify-between">
-                        <div>
-                            <h4 class="font-semibold text-gray-700 mb-4">Art Channels</h4>
-                            <div class="flex flex-col gap-3">
-                                <!-- Instagram -->
-                                <a href="https://www.instagram.com/lailasabzi/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group hover:text-red-500 transition-colors">
-                                    <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                                        <rect x="3" y="3" width="18" height="18" rx="5"></rect>
-                                        <circle cx="12" cy="12" r="4"></circle>
-                                        <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none"></circle>
-                                    </svg>
-                                    <span>Instagram</span>
-                                </a>
-                                <!-- TikTok -->
-                                <a href="https://www.tiktok.com/@lailasabzi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group hover:text-red-500 transition-colors">
-                                    <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                        <path d="M16.6 3c.3 1.8 1.4 3.3 3.1 4.1.5.2 1 .4 1.6.4v3.1c-1.5 0-2.9-.4-4.1-1.1v6.8c0 4.1-3.3 6.7-6.7 6.7-3.1 0-5.7-2.5-5.7-5.7 0-3.4 2.8-5.8 6.2-5.8.3 0 .7 0 1 .1v3.2c-.3-.1-.6-.2-1-.2-1.6 0-2.9 1.1-2.9 2.7 0 1.5 1.1 2.7 2.7 2.7 1.8 0 2.9-1.2 2.9-3.5V3h2.9z"/>
-                                    </svg>
-                                    <span>TikTok</span>
-                                </a>
-                                <!-- YouTube -->
-                                <a href="https://www.youtube.com/@lailasabzi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group hover:text-red-500 transition-colors">
-                                    <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
-                                    </svg>
-                                    <span>YouTube</span>
-                                </a>
-                            </div>
-                        </div>
+                    <div style="width: 100vw; position: relative; left: 50%; right: 50%; margin-left: -50vw; margin-right: -50vw;">
+                        <iframe src="https://sabawhy.substack.com/embed" height="320" style="width: 100% !important; border: none; background: white;" frameborder="0" scrolling="no"></iframe>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-</body>
-</html>
+                <!-- SOCIAL MEDIA CHANNELS -->
+                <section class="w-full my-8">
+                    <div class="full-bleed animated-rainbow-bg py-8 border-y border-gray-300/40 shadow-inner backdrop-blur-sm">
+                        <div class="max-w-4xl mx-auto px-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+                                <!-- Main Channels -->
+                                <div class="bg-white/90 backdrop-blur-md p-6 border border-white/60 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md flex flex-col justify-between">
+                                    <div>
+                                        <h4 class="font-semibold text-gray-700 mb-4">Main Channels</h4>
+                                        <div class="flex flex-col gap-3">
+                                            <!-- Instagram -->
+                                            <a href="https://www.instagram.com/_sabawhy/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group hover:text-red-500 transition-colors">
+                                                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                                                    <circle cx="12" cy="12" r="4"></circle>
+                                                    <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none"></circle>
+                                                </svg>
+                                                <span>Instagram</span>
+                                            </a>
+                                            <!-- TikTok -->
+                                            <a href="https://www.tiktok.com/@__sabawhy" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group hover:text-red-500 transition-colors">
+                                                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                    <path d="M16.6 3c.3 1.8 1.4 3.3 3.1 4.1.5.2 1 .4 1.6.4v3.1c-1.5 0-2.9-.4-4.1-1.1v6.8c0 4.1-3.3 6.7-6.7 6.7-3.1 0-5.7-2.5-5.7-5.7 0-3.4 2.8-5.8 6.2-5.8.3 0 .7 0 1 .1v3.2c-.3-.1-.6-.2-1-.2-1.6 0-2.9 1.1-2.9 2.7 0 1.5 1.1 2.7 2.7 2.7 1.8 0 2.9-1.2 2.9-3.5V3h2.9z"/>
+                                                </svg>
+                                                <span>TikTok</span>
+                                            </a>
+                                            <!-- YouTube -->
+                                            <a href="https://www.youtube.com/@sabawhy" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group hover:text-red-500 transition-colors">
+                                                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                                </svg>
+                                                <span>YouTube</span>
+                                            </a>
+                                            <!-- Substack -->
+                                            <a href="https://substack.com/@sabawhy" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group hover:text-red-500 transition-colors">
+                                                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                    <path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.111L22.539 24V10.812H1.46zM22.539 0H1.46v2.836h21.079V0z"/>
+                                                </svg>
+                                                <span>Substack</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Art Channels -->
+                                <div class="bg-white/90 backdrop-blur-md p-6 border border-white/60 transform hover:-translate-y-1 transition-all duration-300 hover:shadow-md flex flex-col justify-between">
+                                    <div>
+                                        <h4 class="font-semibold text-gray-700 mb-4">Art Channels</h4>
+                                        <div class="flex flex-col gap-3">
+                                            <!-- Instagram -->
+                                            <a href="https://www.instagram.com/lailasabzi/" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group hover:text-red-500 transition-colors">
+                                                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                                    <rect x="3" y="3" width="18" height="18" rx="5"></rect>
+                                                    <circle cx="12" cy="12" r="4"></circle>
+                                                    <circle cx="17.5" cy="6.5" r="0.75" fill="currentColor" stroke="none"></circle>
+                                                </svg>
+                                                <span>Instagram</span>
+                                            </a>
+                                            <!-- TikTok -->
+                                            <a href="https://www.tiktok.com/@lailasabzi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group hover:text-red-500 transition-colors">
+                                                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                    <path d="M16.6 3c.3 1.8 1.4 3.3 3.1 4.1.5.2 1 .4 1.6.4v3.1c-1.5 0-2.9-.4-4.1-1.1v6.8c0 4.1-3.3 6.7-6.7 6.7-3.1 0-5.7-2.5-5.7-5.7 0-3.4 2.8-5.8 6.2-5.8.3 0 .7 0 1 .1v3.2c-.3-.1-.6-.2-1-.2-1.6 0-2.9 1.1-2.9 2.7 0 1.5 1.1 2.7 2.7 2.7 1.8 0 2.9-1.2 2.9-3.5V3h2.9z"/>
+                                                </svg>
+                                                <span>TikTok</span>
+                                            </a>
+                                            <!-- YouTube -->
+                                            <a href="https://www.youtube.com/@lailasabzi" target="_blank" rel="noopener noreferrer" class="flex items-center gap-3 group hover:text-red-500 transition-colors">
+                                                <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                                                </svg>
+                                                <span>YouTube</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </section>
+
+        </div>
 
         <!-- TRADITIONAL ART SUB-PAGE -->
         <div id="page-traditional" class="hidden animate-fade-in py-16 px-6 max-w-4xl mx-auto">
