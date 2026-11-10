@@ -42,13 +42,13 @@ img{display:block;max-width:100%;animation:imgFadeIn .7s ease-out both}
 @media(max-width:767px){.nav{display:none}.mb{display:block}}
 
 /* hub landing page */
-.hub{padding:clamp(20px,4vw,40px) 0 clamp(40px,7vw,90px);max-width:1200px;margin:0 auto}
-.hero-banner-full{width:100%;height:clamp(260px,38vh,520px);margin-bottom: clamp(32px,5vw,60px);overflow:hidden;background:var(--tile)}
-.hero-banner-full img{width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.hub-full-landing{position:relative;width:100%;min-height:calc(100vh - var(--h));overflow:hidden;background:var(--tile);display:flex;align-items:flex-end}
+.hub-full-landing img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 35%}
+.hub-full-landing::after{content:"";position:absolute;inset:0;background:linear-gradient(to top, rgba(18,16,14,.85) 0%, rgba(18,16,14,.4) 40%, rgba(18,16,14,0) 80%)}
 
-.hub-hero{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));align-items:center;padding:0 clamp(20px,4vw,40px)}
-.hub-hero h1{font-size:clamp(2.8rem,7vw,5.5rem);font-weight:300;letter-spacing:-.04em;line-height:1;margin-bottom:20px}
-.hub-hero p{color:var(--mute);font-size:1.1rem;margin-bottom:12px;max-width:48ch}
+.hub-hero-overlay{position:relative;z-index:1;padding:clamp(24px,5vw,56px) clamp(20px,4vw,40px);color:#ffffff;max-width:800px;text-shadow:0 1px 3px rgba(0,0,0,.4)}
+.hub-hero-overlay h1{font-size:clamp(1.5rem,3.2vw,2.4rem);font-weight:300;letter-spacing:-.02em;line-height:1.25;margin-bottom:8px;color:#ffffff}
+.hub-hero-overlay p{color:rgba(255,255,255,.85);font-size:clamp(.88rem,1.4vw,1rem);margin:0;max-width:48ch;line-height:1.6}
 
 /* sections */
 .sec{padding:clamp(40px,7vw,90px) clamp(20px,4vw,40px);border-top:1px solid var(--line);scroll-margin-top:var(--h)}
@@ -118,8 +118,12 @@ img{display:block;max-width:100%;animation:imgFadeIn .7s ease-out both}
 .ft-group-title{font-size:1.1rem;font-family:Fraunces,serif}
 .ft-group-sub{font-size:.8rem;color:var(--mute)}
 .ics{display:flex;gap:10px;margin-top:4px}
-.ics a{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--ink);border-radius:50%;transition:all .25s ease}
-.ics a:hover{background:var(--c);border-color:var(--c);color:var(--paper);transform:translateY(-2px)}
+.ics a{display:grid;place-items:center;width:34px;height:34px;border:1px solid var(--ink);border-radius:50%;transition:all .25s ease;color:var(--ink)}
+.ics a:hover{transform:translateY(-2px)}
+.ics a.ic-art:hover{color:var(--art);border-color:var(--art)}
+.ics a.ic-writing:hover{color:var(--writing);border-color:var(--writing)}
+.ics a.ic-acting:hover{color:var(--acting);border-color:var(--acting)}
+.ics a.ic-design:hover{color:var(--design);border-color:var(--design)}
 .ic{width:15px;height:15px;fill:currentColor}
 .ft-bottom{text-align:center;font-size:.8rem;color:var(--mute)}
 
@@ -168,355 +172,45 @@ img{display:block;max-width:100%;animation:imgFadeIn .7s ease-out both}
 <main>
 <!-- MAIN HUB HOMEPAGE -->
 <div id="page-home">
-  <div class="hero-banner-full">
-    <img src="hero3.jpg" alt="Saba Yaqoob Hero Banner" onerror="this.onerror=null;this.src='https://placehold.co/1800x600/E2D8C4/8A7F6E?text=Saba+Yaqoob+Multidisciplinary+Art'">
-  </div>
-  <div class="hub">
-    <div class="hub-hero">
-      <div>
-        <h1>Artist, actor, writer, designer.</h1>
-        <p>Saba Yaqoob is a Paris-based multidisciplinary artist working across visual art, performance, editorial writing, and brand design.</p>
-      </div>
+  <div class="hub-full-landing">
+    <img src="hero3.jpg" alt="Saba Yaqoob Hero Banner" onerror="this.onerror=null;this.src='https://placehold.co/1800x1000/E2D8C4/8A7F6E?text=Saba+Yaqoob+Multidisciplinary+Art'">
+    <div class="hub-hero-overlay">
+      <h1>Artist, actor, writer, designer.</h1>
+      <p>Saba Yaqoob is a Paris-based multidisciplinary artist working across visual art, performance, editorial writing, and brand design.</p>
     </div>
   </div>
 </div>
 
-<!-- SECTION HUBS -->
-<div id="page-art-hub" class="sec hidden" style="--c:var(--art)"><div class="in">
-  <button class="back" onclick="showPage('home')" aria-label="Back">←</button>
-  <h2>Art</h2>
-  <div class="g">
-    <button type="button" class="card" onclick="showPage('traditional')"><img src="https://placehold.co/600x400/E2D8C4/8A7F6E?text=Traditional" alt="Traditional art"><h3>Traditional</h3></button>
-    <button type="button" class="card" onclick="showPage('sketches')"><img src="https://placehold.co/600x400/E2D8C4/8A7F6E?text=Sketches" alt="Sketches"><h3>Sketches</h3></button>
-    <button type="button" class="card" onclick="showPage('digital')"><img src="https://placehold.co/600x400/E2D8C4/8A7F6E?text=Digital" alt="Digital art"><h3>Digital</h3></button>
-  </div>
-  <a class="btn" href="https://www.etsy.com/shop/lailasabzi" target="_blank" rel="noopener noreferrer">Etsy Shop (Restock is in the works!)</a>
-</div></div>
-
-<div id="page-writing-hub" class="sec hidden" style="--c:var(--writing)"><div class="in">
-  <button class="back" onclick="showPage('home')" aria-label="Back">←</button>
-  <h2>Poetry &amp; Writing</h2>
-  <div class="g2">
-    <button type="button" class="tc" onclick="showPage('poetry-collection')"><h3>Selected Poems</h3><p>Stanzas capturing intimate thoughts, identity, memory, and unspoken reflections...</p></button>
-    <button type="button" class="tc" onclick="showPage('essays-writing')"><h3>Reflections &amp; Prose</h3><p>Longer-form pieces on culture, creative exploration, and personal storytelling...</p></button>
-  </div>
-  
-  <div style="margin-top:48px; padding-top:24px; border-top:1px solid var(--line);">
-    <h3 style="font-size:1.5rem; color:var(--writing); margin-bottom:8px">Substack Newsletter</h3>
-    <p class="mute" style="margin-bottom:16px">Read essays, reflections, and poetry updates delivered straight to your inbox.</p>
-    <a class="btn" href="https://sabawhy.substack.com/" target="_blank" rel="noopener noreferrer">Subscribe on Substack ↗</a>
-  </div>
-</div></div>
-
-<!-- ACTING PAGE WITH REEL & RESUME LAYOUT -->
-<div id="page-acting-hub" class="sec hidden" style="--c:var(--acting)"><div class="in">
-  <button class="back" onclick="showPage('home')" aria-label="Back">←</button>
-  <h2>Acting</h2>
-  
-  <h3>Showreel</h3>
-  <div class="video-wrapper">
-    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Acting Showreel" allowfullscreen></iframe>
-  </div>
-
-  <h3>Headshots</h3>
-  <div class="headshot-grid">
-    <img src="https://placehold.co/400x500/E2D8C4/8A7F6E?text=Headshot+1" alt="Headshot 1">
-    <img src="https://placehold.co/400x500/E2D8C4/8A7F6E?text=Headshot+2" alt="Headshot 2">
-    <img src="https://placehold.co/400x500/E2D8C4/8A7F6E?text=Headshot+3" alt="Headshot 3">
-  </div>
-
-  <h3 style="margin-top:40px">Filmography</h3>
-  <ul class="roles">
-    <li><h3>Skin Deep</h3><span class="mute">Bartender, 2026</span></li>
-    <li><h3>Say No!</h3><span class="mute">Court Artist, 2025</span></li>
-    <li><h3>Doodhpatti</h3><span class="mute">Noor, 2021</span></li>
-  </ul>
-  
-  <div style="display:flex; gap:16px; flex-wrap:wrap;">
-    <a class="btn" href="https://www.imdb.com/name/nm16391435/?ref_=ext_shr_lnk" target="_blank" rel="noopener noreferrer">View IMDb Profile</a>
-    <a class="btn" href="#" download style="background:var(--acting); color:var(--paper)">Download Acting Resume (PDF)</a>
-  </div>
-</div></div>
-
-<div id="page-design-hub" class="sec hidden" style="--c:var(--design)"><div class="in">
-  <button class="back" onclick="showPage('home')" aria-label="Back">←</button>
-  <h2>Design</h2>
-  <div class="g">
-    <button type="button" class="card" onclick="showPage('brand-design')"><img src="https://placehold.co/600x400/E2D8C4/8A7F6E?text=Brand+Identity" alt="Brand Identity design"><h3>Brand Identity</h3></button>
-    <button type="button" class="card" onclick="showPage('ui-ux-design')"><img src="https://placehold.co/600x400/E2D8C4/8A7F6E?text=UI%2FUX+%26+Web" alt="UI/UX and web design"><h3>UI/UX &amp; Web</h3></button>
-    <button type="button" class="card" onclick="showPage('editorial-design')"><img src="https://placehold.co/600x400/E2D8C4/8A7F6E?text=Editorial+%26+Print" alt="Editorial and print design"><h3>Editorial &amp; Print</h3></button>
-  </div>
-  <a class="btn" href="https://www.behance.net/sabayaqoob" target="_blank" rel="noopener noreferrer">View Behance Portfolio</a>
-</div></div>
-
-<div id="page-about-hub" class="sec hidden" style="--c:var(--about)"><div class="in">
-  <button class="back" onclick="showPage('home')" aria-label="Back">←</button>
-  <h2>About</h2>
-  <div class="ab">
-    <div>
-      <p>Saba (she/they) is a Paris-based multidisciplinary artist whose work bridges visual arts, performance, design, and the written word. Originally from Pakistan and raised through formative years in Hong Kong, she has spent over a decade in Paris weaving her cross-cultural perspective into evocative creative practices.</p>
-      <p>She grew up immersed in performance and visual craft; singing in choirs, playing instruments, and discovering a passion for the stage through early theatrical roles ranging from a mythical Troll to Felicity Morgan in Robert Swindells' Room 13. This early spark ignited a lifelong dedication to storytelling across mediums.</p>
-      <p>Holding a Bachelor’s degree in Graphic Design from LISAA Paris, Saba channels a rich, varied background into filmmaking, poetry, and fine art. Her visual work centers on emotive portraiture and raw sketches, delving into human vulnerability to explore and give voice to stigmatized or shunned emotions.</p>
-    </div>
-    <div>
-      <img src="about.jpg" alt="Saba Yaqoob" onerror="this.onerror=null;this.src='https://placehold.co/800x1000/E2D8C4/8A7F6E?text=About'">
-      <p class="cap">Photo: Sharyal Zafar</p>
-    </div>
-  </div>
-</div></div>
-
-<div id="page-contact-hub" class="sec hidden" style="--c:var(--contact)"><div class="in">
-  <button class="back" onclick="showPage('home')" aria-label="Back">←</button>
-  <h2>Contact</h2>
-  <p style="margin:0; font-size:1.1rem;">For queries, collaborations, or commissions:</p>
-  <a class="mail" href="mailto:heysabawhy@gmail.com">heysabawhy@gmail.com</a>
-</div></div>
-
-<!-- ARTWORK LIGHTBOX GALLERY PAGES -->
-<div id="page-traditional" class="sub hidden" style="--c:var(--art)"><div class="in">
-  <button class="back" onclick="showPage('art-hub')" aria-label="Back">←</button>
-  <h2>Traditional Art</h2>
-  <p class="lede">A collection of traditional oil paintings, gouache studies, and hand-crafted pieces exploring human emotion and texture.</p>
-  
-  <div class="art-grid">
-    <div class="art-item" onclick="openLightbox('https://placehold.co/1200x900/E2D8C4/8A7F6E?text=Oil+on+Canvas+Detailed', 'Unspoken Reverie', 'Oil on canvas, 2024')">
-      <img src="https://placehold.co/600x600/E2D8C4/8A7F6E?text=Unspoken+Reverie" alt="Unspoken Reverie">
-      <div class="art-meta">
-        <strong>Unspoken Reverie</strong>
-        <span class="mute">Oil on Canvas, 2024</span>
-      </div>
-    </div>
-    <div class="art-item" onclick="openLightbox('https://placehold.co/1200x900/E2D8C4/8A7F6E?text=Gouache+Detail', 'Echoes of Memory', 'Gouache on paper, 2025')">
-      <img src="https://placehold.co/600x600/E2D8C4/8A7F6E?text=Echoes+of+Memory" alt="Echoes of Memory">
-      <div class="art-meta">
-        <strong>Echoes of Memory</strong>
-        <span class="mute">Gouache on Paper, 2025</span>
-      </div>
-    </div>
-  </div>
-</div></div>
-
-<div id="page-sketches" class="sub hidden" style="--c:var(--art)"><div class="in">
-  <button class="back" onclick="showPage('art-hub')" aria-label="Back">←</button>
-  <h2>Sketches</h2>
-  <p class="lede">Raw graphite drawings, quick gesture portraiture studies, and sketchbook entries.</p>
-  <div class="art-grid">
-    <div class="art-item" onclick="openLightbox('https://placehold.co/1200x900/E2D8C4/8A7F6E?text=Graphite+Study', 'Study in Vulnerability', 'Graphite on paper, 2024')">
-      <img src="https://placehold.co/600x600/E2D8C4/8A7F6E?text=Graphite+Study" alt="Graphite Study">
-      <div class="art-meta">
-        <strong>Study in Vulnerability</strong>
-        <span class="mute">Graphite, 2024</span>
-      </div>
-    </div>
-  </div>
-</div></div>
-
-<div id="page-digital" class="sub hidden" style="--c:var(--art)"><div class="in">
-  <button class="back" onclick="showPage('art-hub')" aria-label="Back">←</button>
-  <h2>Digital Art</h2>
-  <p class="lede">Digital illustrations, concept sketches, and color explorations.</p>
-  <div class="art-grid">
-    <div class="art-item" onclick="openLightbox('https://placehold.co/1200x900/E2D8C4/8A7F6E?text=Digital+Painting', 'Chromatic Portrait', 'Digital Illustration, 2025')">
-      <img src="https://placehold.co/600x600/E2D8C4/8A7F6E?text=Digital+Painting" alt="Digital Painting">
-      <div class="art-meta">
-        <strong>Chromatic Portrait</strong>
-        <span class="mute">Digital, 2025</span>
-      </div>
-    </div>
-  </div>
-</div></div>
-
-<!-- DESIGN CASE STUDY LAYOUTS -->
-<div id="page-brand-design" class="sub hidden" style="--c:var(--design)"><div class="in">
-  <button class="back" onclick="showPage('design-hub')" aria-label="Back">←</button>
-  <h2>Brand Identity</h2>
-  <p class="lede">Comprehensive visual identity systems created for commercial clients and editorial projects.</p>
-
-  <div class="cs-card">
-    <div>
-      <h3>Brand Identity Project A</h3>
-      <div class="cs-tags">
-        <span class="cs-tag">Logo Design</span>
-        <span class="cs-tag">Brand Strategy</span>
-        <span class="cs-tag">Typography</span>
-      </div>
-      <p>A full visual identity system designed for a Paris-based creative studio. Focused on elegant typography and versatile layout systems.</p>
-    </div>
-    <div class="cs-gallery">
-      <img src="https://placehold.co/400x300/E2D8C4/8A7F6E?text=Logo+Grid" alt="Brand Project 1 Logo">
-      <img src="https://placehold.co/400x300/E2D8C4/8A7F6E?text=Color+Palette" alt="Brand Project 1 Assets">
-    </div>
-  </div>
-</div></div>
-
-<div id="page-ui-ux-design" class="sub hidden" style="--c:var(--design)"><div class="in">
-  <button class="back" onclick="showPage('design-hub')" aria-label="Back">←</button>
-  <h2>UI/UX &amp; Web Design</h2>
-  <p class="lede">Digital product designs, web layouts, and interactive experiences focused on user-centered principles.</p>
-  <div class="cs-card">
-    <div>
-      <h3>Interactive Web Application</h3>
-      <div class="cs-tags">
-        <span class="cs-tag">Figma</span>
-        <span class="cs-tag">Prototyping</span>
-        <span class="cs-tag">UI System</span>
-      </div>
-      <p>Designing a clean interface for an independent publication platform, prioritizing fast scanning and rich reading experiences.</p>
-    </div>
-    <div class="cs-gallery">
-      <img src="https://placehold.co/400x300/E2D8C4/8A7F6E?text=Desktop+UI" alt="UI Design Screen 1">
-      <img src="https://placehold.co/400x300/E2D8C4/8A7F6E?text=Mobile+UI" alt="UI Design Screen 2">
-    </div>
-  </div>
-</div></div>
-
-<div id="page-editorial-design" class="sub hidden" style="--c:var(--design)"><div class="in">
-  <button class="back" onclick="showPage('design-hub')" aria-label="Back">←</button>
-  <h2>Editorial &amp; Print</h2>
-  <p class="lede">Publication layouts, book designs, poster design, and printed materials.</p>
-  <div class="cs-card">
-    <div>
-      <h3>Art &amp; Culture Magazine Layout</h3>
-      <div class="cs-tags">
-        <span class="cs-tag">InDesign</span>
-        <span class="cs-tag">Editorial</span>
-        <span class="cs-tag">Print</span>
-      </div>
-      <p>Experimental typography and multi-column grid layout for a quarterly print journal.</p>
-    </div>
-    <div class="cs-gallery">
-      <img src="https://placehold.co/400x300/E2D8C4/8A7F6E?text=Magazine+Cover" alt="Cover Layout">
-      <img src="https://placehold.co/400x300/E2D8C4/8A7F6E?text=Spread+Layout" alt="Spread Layout">
-    </div>
-  </div>
-</div></div>
-
-<!-- POETRY & WRITING DEDICATED TYPOGRAPHY LAYOUT -->
-<div id="page-poetry-collection" class="sub hidden" style="--c:var(--writing)"><div class="in">
-  <button class="back" onclick="showPage('writing-hub')" aria-label="Back">←</button>
-  <h2>Selected Poems</h2>
-  <p class="lede">A curated collection of poetry and short stanzas exploring identity, memory, and unspoken thoughts.</p>
-  
-  <article class="poem-block">
-    <h3 class="poem-title">I. Between Cities</h3>
-    <div class="poem-body">
-      we leave pieces of ourselves 
-      in the quiet corners of coffee shops,
-      in languages that sound softest at dusk.
-      
-      paris carries my shadow,
-      hong kong holds my youth.
-    </div>
-    <div class="audio-player">
-      <span>▶ Play Recitation</span>
-      <audio controls style="height:32px">
-        <source src="#" type="audio/mpeg">
-      </audio>
-    </div>
-  </article>
-
-  <article class="poem-block">
-    <h3 class="poem-title">II. On Color</h3>
-    <div class="poem-body">
-      pigment on linen,
-      stretching words until they bleed 
-      into something visible.
-    </div>
-  </article>
-</div></div>
-
-<div id="page-essays-writing" class="sub hidden" style="--c:var(--writing)"><div class="in">
-  <button class="back" onclick="showPage('writing-hub')" aria-label="Back">←</button>
-  <h2>Reflections &amp; Prose</h2>
-  <p class="lede">Long-form essays and creative non-fiction pieces originally published on Substack.</p>
-  
-  <article class="tc" style="margin-bottom:32px">
-    <h3>The Multidisciplinary Myth</h3>
-    <p class="mute">Published October 2025 • 5 min read</p>
-    <p style="margin-top:12px">An essay on navigating creative identity across visual art, performance, and design without feeling fragmented...</p>
-    <a class="btn" href="https://sabawhy.substack.com/" target="_blank" rel="noopener noreferrer">Read Full Article on Substack ↗</a>
-  </article>
-</div></div>
-</main>
-
-<!-- LIGHTBOX MODAL -->
-<div id="lightbox" class="lightbox" onclick="closeLightbox()">
-  <div class="lightbox-content" onclick="event.stopPropagation()">
-    <img id="lb-img" src="" alt="Enlarged artwork">
-    <h3 id="lb-title" style="font-size:1.8rem"></h3>
-    <p id="lb-desc" class="mute"></p>
-    <button class="btn" onclick="closeLightbox()" style="margin-top:16px; background:var(--paper); color:var(--ink)">Close View</button>
-  </div>
-</div>
-
+<!-- FOOTER -->
 <footer class="ft">
   <div class="ft-in">
     <div class="ft-channels">
       <div class="ft-group">
-        <div class="ft-group-title" style="color:var(--acting);">Acting, Writing &amp; Self</div>
-        <div class="ft-group-sub">@sabawhy</div>
+        <span class="ft-group-title">Acting, Writing & Self</span>
+        <span class="ft-group-sub">@sabawhy</span>
         <div class="ics">
-          <a href="https://www.instagram.com/_sabawhy/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @_sabawhy" style="--c:var(--acting)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#ig"/></svg></a>
-          <a href="https://www.tiktok.com/@__sabawhy" target="_blank" rel="noopener noreferrer" aria-label="TikTok @__sabawhy" style="--c:var(--acting)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#tt"/></svg></a>
-          <a href="https://www.youtube.com/@sabawhy" target="_blank" rel="noopener noreferrer" aria-label="YouTube @sabawhy" style="--c:var(--acting)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#yt"/></svg></a>
-          <a href="https://substack.com/@sabawhy" target="_blank" rel="noopener noreferrer" aria-label="Substack @sabawhy" style="--c:var(--acting)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#ss"/></svg></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Saba Yaqoob Instagram" class="ic-art"><svg class="ic"><use href="#ig"/></svg></a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="Saba Yaqoob TikTok" class="ic-writing"><svg class="ic"><use href="#tt"/></svg></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="Saba Yaqoob YouTube" class="ic-acting"><svg class="ic"><use href="#yt"/></svg></a>
+          <a href="https://substack.com" target="_blank" rel="noopener" aria-label="Saba Yaqoob Substack" class="ic-design"><svg class="ic"><use href="#ss"/></svg></a>
         </div>
       </div>
       <div class="ft-group right">
-        <div class="ft-group-title" style="color:var(--art);">Art &amp; Studio</div>
-        <div class="ft-group-sub">@lailasabzi</div>
+        <span class="ft-group-title">Art & Studio</span>
+        <span class="ft-group-sub">@lailasabzi</span>
         <div class="ics">
-          <a href="https://www.instagram.com/lailasabzi/" target="_blank" rel="noopener noreferrer" aria-label="Instagram @lailasabzi" style="--c:var(--art)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#ig"/></svg></a>
-          <a href="https://www.tiktok.com/@lailasabzi" target="_blank" rel="noopener noreferrer" aria-label="TikTok @lailasabzi" style="--c:var(--art)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#tt"/></svg></a>
-          <a href="https://www.youtube.com/@lailasabzi" target="_blank" rel="noopener noreferrer" aria-label="YouTube @lailasabzi" style="--c:var(--art)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#yt"/></svg></a>
-          <a href="https://www.etsy.com/shop/lailasabzi" target="_blank" rel="noopener noreferrer" aria-label="Etsy shop lailasabzi" style="--c:var(--art)"><svg class="ic" viewBox="0 0 24 24" aria-hidden="true"><use href="#et"/></svg></a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Laila Sabzi Instagram" class="ic-art"><svg class="ic"><use href="#ig"/></svg></a>
+          <a href="https://tiktok.com" target="_blank" rel="noopener" aria-label="Laila Sabzi TikTok" class="ic-writing"><svg class="ic"><use href="#tt"/></svg></a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="Laila Sabzi YouTube" class="ic-acting"><svg class="ic"><use href="#yt"/></svg></a>
+          <a href="https://etsy.com" target="_blank" rel="noopener" aria-label="Laila Sabzi Etsy Shop" class="ic-design"><svg class="ic"><use href="#et"/></svg></a>
         </div>
       </div>
     </div>
     <div class="ft-bottom">
-      <p style="margin:0">&copy; 2026 Saba Yaqoob. All rights reserved.</p>
+      <p>© Saba Yaqoob. All rights reserved.</p>
     </div>
   </div>
 </footer>
 
-<script>
-function toggleMenu(){
-  const open = document.getElementById('mobileMenu').classList.toggle('open');
-  const b = document.getElementById('menuButton');
-  document.body.classList.toggle('menu-open', open);
-  b.textContent = open ? '✕' : '☰';
-  b.setAttribute('aria-expanded', open);
-  b.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-}
-
-function navigateFromMobile(id){ toggleMenu(); showPage(id); }
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    if (document.getElementById('mobileMenu').classList.contains('open')) toggleMenu();
-    closeLightbox();
-  }
-});
-
-function showPage(name) {
-  const pages = ['home','art-hub','writing-hub','acting-hub','design-hub','about-hub','contact-hub','traditional','sketches','digital','brand-design','ui-ux-design','editorial-design','poetry-collection','essays-writing'];
-  pages.forEach(p => {
-    const el = document.getElementById('page-' + p);
-    if (el) el.classList.toggle('hidden', p !== name);
-  });
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
-function openLightbox(src, title, desc) {
-  document.getElementById('lb-img').src = src;
-  document.getElementById('lb-title').textContent = title;
-  document.getElementById('lb-desc').textContent = desc;
-  document.getElementById('lightbox').classList.add('active');
-}
-
-function closeLightbox() {
-  document.getElementById('lightbox').classList.remove('active');
-}
-</script>
-</body>
-</html>
+<!-- SECTION HUBS -->
+<!-- ... existing code -->
